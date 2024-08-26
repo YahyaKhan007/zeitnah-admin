@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 import 'package:zeitnah_admin/ui/screens/app_views.dart';
@@ -16,7 +17,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return ScreenUtilInit(
+      designSize: const Size(1300, 600),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      // Use builder only if you need to use library outside ScreenUtilInit context
+      builder: (_ , child) {
+        return 
+    
+    GetMaterialApp(
       title: 'Zeitnah Admin',
       initialBinding: ControllerBinding(),
        translations: AppLanguage(),
@@ -29,8 +38,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.kcPrimaryColor),
         useMaterial3: true,
       ),
-      home: const MainDashboard(),
-    );
+      home: const AuthScreenHome(),
+    );});
   }
 }
 
