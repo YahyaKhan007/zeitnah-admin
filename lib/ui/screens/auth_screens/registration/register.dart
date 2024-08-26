@@ -27,11 +27,10 @@ class RegisterationScreen extends StatelessWidget {
     return Container(
         height: size.height,
         width: size.width * 0.33,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           color: AppColors.kcWhite,
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(24),
-            topRight: Radius.circular(24),
+          borderRadius: BorderRadius.circular(
+             24.r
           ),
         ),
         child: Padding(
@@ -88,13 +87,13 @@ class RegisterationScreen extends StatelessWidget {
                 16.h.verticalSpace,
                 rememberMeRow(),
                24.h.verticalSpace,
-                siginButton(), 24.h.verticalSpace,
+                sigupButton(), 24.h.verticalSpace,
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0),
                   child: Divider(
                     color: AppColors.kcgreyFieldColor.withOpacity(0.3),
                   ),
-                ), 24.h.verticalSpace,
+                ), 8.h.verticalSpace,
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -171,7 +170,7 @@ class RegisterationScreen extends StatelessWidget {
     );
   }
 
-  Widget siginButton() {
+  Widget sigupButton() {
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -182,7 +181,7 @@ class RegisterationScreen extends StatelessWidget {
         width: double.maxFinite,
         child: Center(
           child: Text(
-            "Sign in",
+            "Sign up",
             style: TextStyle(
               color: AppColors.kcWhite,
               fontSize: 14.sp,

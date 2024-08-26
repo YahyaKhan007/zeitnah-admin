@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
+import 'package:zeitnah_admin/ui/screens/app_views.dart';
 import 'package:zeitnah_admin/ui/utils/app_constants/app_constants.dart';
 
 import '../../../../services/get_controllers_service/zeitnah_admin_controller.dart';
@@ -147,7 +147,14 @@ class LoginScreen extends StatelessWidget {
 
   Widget siginButton() {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(()=> const AdminDashboardHome(),
+        opaque: true,
+        duration: const Duration(milliseconds: 400),
+
+          transition: Transition.cupertino
+        );
+      },
       child: Container(
         padding:  EdgeInsets.symmetric(vertical: 12.h),
         decoration: BoxDecoration(
