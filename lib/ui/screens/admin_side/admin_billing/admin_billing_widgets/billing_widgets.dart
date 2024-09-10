@@ -12,7 +12,7 @@ Widget buildBillingLabels() {
           child: Text(
             "Users",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -22,7 +22,7 @@ Widget buildBillingLabels() {
             child: Text(
               "Amount",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -33,7 +33,7 @@ Widget buildBillingLabels() {
             child: Text(
               "Time",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -44,7 +44,7 @@ Widget buildBillingLabels() {
             child: Text(
               "Date",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -75,14 +75,14 @@ Widget buildBillingTabelData(
               Text(
                 patientName,
                 style: TextStyle(
-                  fontSize: 12.sp,
+                  fontSize: 14.sp,
                   color: AppColors.kcPrimaryTextColor,
                 ),
               ),
               Text(
                 providerEmail,
                 style: TextStyle(
-                  fontSize: 12.sp,
+                  fontSize: 14.sp,
                   color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                 ),
               )
@@ -104,7 +104,7 @@ Widget buildBillingTabelData(
                     // "\$$amount",
                     "\$512",
                     style: TextStyle(
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       color: AppColors.kcPrimaryWhite,
                     ),
                   ),
@@ -118,7 +118,7 @@ Widget buildBillingTabelData(
             child: Text(
               registerTime,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -129,7 +129,7 @@ Widget buildBillingTabelData(
             child: Text(
               registeredDate,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -138,7 +138,7 @@ Widget buildBillingTabelData(
           child: Text(
             "Edit",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           ),

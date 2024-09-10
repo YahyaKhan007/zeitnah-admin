@@ -1,12 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
+import 'package:zeitnah_admin/ui/screens/service_provider/auth_screens/auth_screen_home.dart';
+
+import 'firebase_options.dart';
 import 'ui/controller_bindings.dart';
-import 'ui/screens/admin_side/admin_home/admin_home.dart';
 import 'ui/utils/app_language/app_strings.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -17,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(1300, 600),
+        designSize: const Size(1800, 900),
         minTextAdapt: true,
         splitScreenMode: true,
         // Use builder only if you need to use library outside ScreenUtilInit context
@@ -33,9 +41,10 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               colorScheme:
                   ColorScheme.fromSeed(seedColor: AppColors.kcPrimaryColor),
+              fontFamily: 'abel',
               useMaterial3: true,
             ),
-            home: const AdminHome(),
+            home: const AuthScreenHome(),
           );
         });
   }

@@ -1,4 +1,4 @@
-package com.example.zeitnah_admin
+package com.stackwise_agency.zeitna_web
 
 import io.flutter.embedding.android.FlutterActivity
 

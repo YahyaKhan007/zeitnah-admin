@@ -49,4 +49,10 @@ class AppStrings {
     "06:25",
     "12:25",
   ];
+
+  static final List setPriorityTime = [
+    3,
+    5,
+    10,
+  ];
 }

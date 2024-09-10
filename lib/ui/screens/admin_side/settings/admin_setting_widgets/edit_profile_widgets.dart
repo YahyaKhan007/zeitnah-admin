@@ -20,7 +20,7 @@ class EditProfileWidget extends StatelessWidget {
       subtitle: Text(
         "alexarawles@gmail.com",
         style:
-            TextStyle(fontSize: 12.sp, color: AppColors.kcSecondaryTextColor),
+            TextStyle(fontSize: 14.sp, color: AppColors.kcSecondaryTextColor),
       ),
       trailing: GestureDetector(
         onTap: () {
@@ -41,7 +41,7 @@ class EditProfileWidget extends StatelessWidget {
               child: Text(
                 zeitnahControler.editProfile.value ? "Update" : "Edit",
                 style:
-                    TextStyle(fontSize: 12.sp, color: AppColors.kcPrimaryWhite),
+                    TextStyle(fontSize: 14.sp, color: AppColors.kcPrimaryWhite),
               ),
             ),
           ),

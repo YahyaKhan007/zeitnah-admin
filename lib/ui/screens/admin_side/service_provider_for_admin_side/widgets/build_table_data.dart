@@ -11,7 +11,7 @@ Widget buildLabels() {
           child: Text(
             "AUTHOR",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -20,7 +20,7 @@ Widget buildLabels() {
           child: Text(
             "Phone Number",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -29,7 +29,7 @@ Widget buildLabels() {
           child: Text(
             "Patients",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -38,7 +38,7 @@ Widget buildLabels() {
           child: Text(
             "Registered",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -81,14 +81,14 @@ Widget buildTabelData(
                   Text(
                     providerName,
                     style: TextStyle(
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       color: AppColors.kcPrimaryTextColor,
                     ),
                   ),
                   Text(
                     providerEmail,
                     style: TextStyle(
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                     ),
                   )
@@ -101,7 +101,7 @@ Widget buildTabelData(
           child: Text(
             phoneNumber,
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -110,7 +110,7 @@ Widget buildTabelData(
           child: Text(
             totalPatients,
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -119,7 +119,7 @@ Widget buildTabelData(
           child: Text(
             registeredDate,
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -127,7 +127,7 @@ Widget buildTabelData(
           child: Text(
             "Edit",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           ),

@@ -7,4 +7,8 @@ class AppColors {
   static const kcPrimaryTextColor = Colors.black;
   static const kcSecondaryTextColor = Colors.grey;
   static const kcPrimaryGreen = Color(0xff48BB78);
+
+  static const kcPrimaryBackground = Color(0xffDFF6FF);
+
+  static var kcPrimaryBlackColor = Colors.black;
 }

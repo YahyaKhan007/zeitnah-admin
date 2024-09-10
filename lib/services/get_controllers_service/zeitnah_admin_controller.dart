@@ -8,4 +8,10 @@ class ZeitnahAdminController extends GetxController {
 
   RxBool editProfile = RxBool(false);
   RxString selectedPage = RxString("Dashboard");
+
+  RxBool isPriorityFunction = RxBool(false);
+  RxInt setPriorityTime = RxInt(3);
+  RxBool customPriority = RxBool(false);
+
+  RxInt providerUserTab = RxInt(0);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 
 Widget labeltextFieldColumn(
@@ -32,23 +33,27 @@ Widget labeltextFieldColumn(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                
                 Expanded(
                   child: TextFormField(
                     decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: hintText,
-                        hintStyle: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.kcSecondaryTextColor,
-                            fontWeight: FontWeight.normal,),
-                            
-                            ),
-                      
-                            
+                      border: InputBorder.none,
+                      hintText: hintText,
+                      hintStyle: TextStyle(
+                        fontSize: 14.sp,
+                        color: AppColors.kcSecondaryTextColor,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
                   ),
                 ),
-                SizedBox(child: trailigIcon == null ? null : Icon(trailigIcon, color: AppColors.kcPrimaryTextColor,),) ,
+                SizedBox(
+                  child: trailigIcon == null
+                      ? null
+                      : Icon(
+                          trailigIcon,
+                          color: AppColors.kcPrimaryTextColor,
+                        ),
+                ),
               ],
             ),
           ),

@@ -12,7 +12,7 @@ Widget buildAppointmentLabels() {
           child: Text(
             "Users",
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -22,7 +22,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Phone Number",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -33,7 +33,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Service Provider",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -44,7 +44,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Time",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -55,7 +55,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Date",
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -86,14 +86,14 @@ Widget buildAppointmentTabelData(
               Text(
                 patientName,
                 style: TextStyle(
-                  fontSize: 12.sp,
+                  fontSize: 14.sp,
                   color: AppColors.kcPrimaryTextColor,
                 ),
               ),
               Text(
                 providerEmail,
                 style: TextStyle(
-                  fontSize: 12.sp,
+                  fontSize: 14.sp,
                   color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                 ),
               )
@@ -105,7 +105,7 @@ Widget buildAppointmentTabelData(
             child: Text(
               phoneNumber,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -116,7 +116,7 @@ Widget buildAppointmentTabelData(
             child: Text(
               providerName,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -127,7 +127,7 @@ Widget buildAppointmentTabelData(
             child: Text(
               registerTime,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -138,7 +138,7 @@ Widget buildAppointmentTabelData(
             child: Text(
               registeredDate,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),

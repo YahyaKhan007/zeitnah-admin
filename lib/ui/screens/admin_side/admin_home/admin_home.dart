@@ -20,6 +20,48 @@ class _AdminHomeState extends State<AdminHome> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.kcPrimaryColor.withOpacity(0.05),
+      bottomNavigationBar: SizedBox(
+        height: 20.h,
+        child: Center(
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                    text: '@ 2021 Made with',
+                    style: TextStyle(
+                      color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                      fontSize: 10.sp,
+                    )),
+                TextSpan(
+                    text: ' ❤ ',
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 10.sp,
+                    )),
+                TextSpan(
+                    text: 'by ',
+                    style: TextStyle(
+                      color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                      fontSize: 10.sp,
+                    )),
+                TextSpan(
+                  text: ' Stackwise Tecnogies ',
+                  style: TextStyle(
+                    color: AppColors.kcPrimaryColor,
+                    fontSize: 10.sp,
+                  ),
+                ),
+                TextSpan(
+                    text: 'for a better web',
+                    style: TextStyle(
+                      color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                      fontSize: 10.sp,
+                    )),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
