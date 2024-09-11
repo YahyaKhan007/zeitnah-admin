@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zeitnah_admin/services/get_controllers_service/zeitnah_admin_controller.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
@@ -29,24 +28,23 @@ class ProviderTextfieldWithLabelWidget extends StatelessWidget {
       children: [
         Text(
           label,
-          style:
-              TextStyle(fontSize: 12.sp, color: AppColors.kcPrimaryTextColor),
+          style: const TextStyle(fontSize: 12, color: AppColors.kcPrimaryTextColor),
         ),
-        8.h.verticalSpace,
+        const SizedBox(height: 8),
         Obx(
           () => Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            height: 40.h,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            height: 40,
             width: size.width * 0.25,
             decoration: BoxDecoration(
               color: AppColors.kcgreyFieldColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: TextFormField(
               enabled: zeitnahControler.editProfile.value,
-              style: TextStyle(
+              style: const TextStyle(
                 color: AppColors.kcgreyFieldColor,
-                fontSize: 12.sp,
+                fontSize: 12,
               ),
               controller: controller,
               obscureText: isPassword != null ? true : false,
@@ -55,7 +53,7 @@ class ProviderTextfieldWithLabelWidget extends StatelessWidget {
                 hintText: isPassword == null ? hintText : '********',
                 hintStyle: TextStyle(
                   color: AppColors.kcgreyFieldColor.withOpacity(0.5),
-                  fontSize: 12.sp,
+                  fontSize: 12,
                 ),
               ),
             ),

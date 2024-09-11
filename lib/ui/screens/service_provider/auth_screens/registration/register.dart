@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
@@ -29,10 +28,10 @@ class RegisterationScreen extends StatelessWidget {
       width: size.width * 0.33,
       decoration: BoxDecoration(
         color: AppColors.kcPrimaryWhite,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(24),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.r),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -43,13 +42,13 @@ class RegisterationScreen extends StatelessWidget {
               Text(
                 'Register now',
                 style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       color: AppColors.kcPrimaryTextColor,
-                      fontSize: 20.sp,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600),
                 ),
               ),
-              16.h.verticalSpace,
+              const SizedBox(height: 16),
               labeltextFieldColumn(
                   label: 'Service Provider Name',
                   hintText: 'Name',
@@ -78,40 +77,40 @@ class RegisterationScreen extends StatelessWidget {
                   label: 'Zip Code',
                   hintText: 'Zipcode',
                   controller: zipCodeController),
-              16.h.verticalSpace,
+              const SizedBox(height: 16),
               rememberMeRow(),
-              24.h.verticalSpace,
+              const SizedBox(height: 24),
               sigupButton(),
-              24.h.verticalSpace,
+              const SizedBox(height: 24),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: Divider(
                   color: AppColors.kcgreyFieldColor.withOpacity(0.3),
                 ),
               ),
-              8.h.verticalSpace,
+              const SizedBox(height: 8),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    const Text(
                       "Don't have an account?  ",
                       style: TextStyle(
                           color: AppColors.kcPrimaryTextColor,
-                          fontSize: 14.sp,
+                          fontSize: 14,
                           fontWeight: FontWeight.normal),
                     ),
                     GestureDetector(
                       onTap: () {
                         adminController.authScreen.value = AuthScreenEnum.login;
                       },
-                      child: Text(
+                      child: const Text(
                         "Sign in now",
                         style: TextStyle(
                             color: AppColors.kcPrimaryColor,
-                            fontSize: 14.sp,
+                            fontSize: 14,
                             fontWeight: FontWeight.normal),
                       ),
                     ),
@@ -148,21 +147,20 @@ class RegisterationScreen extends StatelessWidget {
                     // controller.isPriorityFunction.value = val;
                   },
                 ),
-                Text(
+                const Text(
                   "Remember me",
                   style: TextStyle(
                       color: AppColors.kcPrimaryTextColor,
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       fontWeight: FontWeight.normal),
                 )
               ],
             ),
           ),
           CupertinoButton(
-              child: Text(
+              child: const Text(
                 "Forgot Password",
-                style:
-                    TextStyle(fontSize: 14.sp, fontWeight: FontWeight.normal),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
               ),
               onPressed: () {})
         ],
@@ -174,17 +172,17 @@ class RegisterationScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 12.h),
+        padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
             color: AppColors.kcPrimaryColor,
-            borderRadius: BorderRadius.circular(8.r)),
+            borderRadius: BorderRadius.circular(8)),
         width: double.maxFinite,
-        child: Center(
+        child: const Center(
           child: Text(
             "Sign up",
             style: TextStyle(
               color: AppColors.kcPrimaryWhite,
-              fontSize: 14.sp,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'my_users/my_user_widgets/my_users_screen/my_user_screens.dart';
 import 'my_users/my_user_widgets/user_option_widgets.dart';
@@ -20,7 +19,7 @@ class ServiceProviderMyUsersHome extends StatelessWidget {
           UserPageOptionWidget(
             userPageController: userPageController,
           ),
-          8.h.verticalSpace,
+          const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
             child: SizedBox(

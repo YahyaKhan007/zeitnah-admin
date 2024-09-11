@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zeitnah_admin/services/get_controllers_service/zeitnah_admin_controller.dart';
@@ -7,6 +6,7 @@ import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 
 class ProviderLeftSidePanel extends StatelessWidget {
   final PageController adminPageController;
+
   const ProviderLeftSidePanel({super.key, required this.adminPageController});
 
   @override
@@ -23,23 +23,23 @@ class ProviderLeftSidePanel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          16.h.verticalSpace,
-          Text(
+          const SizedBox(height: 16),
+          const Text(
             "Praxis für Physiotherapie & Gesundheit - Eduard Stabel",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor),
           ),
-          8.h.verticalSpace,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: const Divider(),
+          const SizedBox(height: 8),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: Divider(),
           ),
-          8.h.verticalSpace,
+          const SizedBox(height: 8),
           Padding(
-            padding: const EdgeInsets.only(left: 16, right: 24).w,
+            padding: const EdgeInsets.only(left: 16, right: 24),
             child: Column(
               children: [
                 _buildDashboardOption(
@@ -89,14 +89,14 @@ class ProviderLeftSidePanel extends StatelessWidget {
                 Text(
                   "ACCOUNT SETTINGS",
                   style: GoogleFonts.inter(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                         letterSpacing: -0.5,
                         color: AppColors.kcPrimaryTextColor,
-                        fontSize: 18.sp,
+                        fontSize: 18,
                         fontWeight: FontWeight.normal),
                   ),
                 ),
-                8.h.verticalSpace,
+                const SizedBox(height: 8),
                 _buildDashboardOption(
                   image: 'assets/icons/setting.png',
                   index: 4,
@@ -131,10 +131,10 @@ class ProviderLeftSidePanel extends StatelessWidget {
       () => GestureDetector(
         onTap: onTap,
         child: Container(
-          margin: EdgeInsets.only(bottom: 16.h),
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          margin: const EdgeInsets.only(bottom: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.r),
+            borderRadius: BorderRadius.circular(16),
             boxShadow: adminController.dashboardScreentIndex.value != index
                 ? const <BoxShadow>[
                     BoxShadow(
@@ -153,7 +153,7 @@ class ProviderLeftSidePanel extends StatelessWidget {
           child: Row(
             children: [
               CircleAvatar(
-                radius: 16.r,
+                radius: 16,
                 backgroundColor:
                     adminController.dashboardScreentIndex.value == index
                         ? AppColors.kcPrimaryWhite
@@ -165,14 +165,14 @@ class ProviderLeftSidePanel extends StatelessWidget {
                       : AppColors.kcPrimaryColor,
                 ),
               ),
-              16.w.horizontalSpace,
+              const SizedBox(width: 16),
               Text(
                 label,
                 style: TextStyle(
                   color: adminController.dashboardScreentIndex.value == index
                       ? AppColors.kcPrimaryWhite
                       : AppColors.kcPrimaryTextColor,
-                  fontSize: 14.sp,
+                  fontSize: 14,
                 ),
               )
             ],

@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../constants/app_colors/app_colors.dart';
 
@@ -11,7 +10,7 @@ Widget buildLabels() {
           child: Text(
             "AUTHOR",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -20,7 +19,7 @@ Widget buildLabels() {
           child: Text(
             "Phone Number",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -29,7 +28,7 @@ Widget buildLabels() {
           child: Text(
             "Patients",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -38,11 +37,11 @@ Widget buildLabels() {
           child: Text(
             "Registered",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
-      48.w.horizontalSpace,
+      const SizedBox(width: 48),
     ],
   );
 }
@@ -62,17 +61,17 @@ Widget buildTabelData(
           child: Row(
             children: [
               SizedBox(
-                height: 40.h,
-                width: 48.w,
+                height: 40,
+                width: 48,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
+                  borderRadius: BorderRadius.circular(8),
                   child: Image.asset(
                     photo,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              16.w.horizontalSpace,
+              const SizedBox(width: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -80,15 +79,15 @@ Widget buildTabelData(
                 children: [
                   Text(
                     providerName,
-                    style: TextStyle(
-                      fontSize: 14.sp,
+                    style: const TextStyle(
+                      fontSize: 14,
                       color: AppColors.kcPrimaryTextColor,
                     ),
                   ),
                   Text(
                     providerEmail,
                     style: TextStyle(
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                     ),
                   )
@@ -100,8 +99,8 @@ Widget buildTabelData(
           flex: 2,
           child: Text(
             phoneNumber,
-            style: TextStyle(
-              fontSize: 14.sp,
+            style: const TextStyle(
+              fontSize: 14,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -109,8 +108,8 @@ Widget buildTabelData(
           flex: 1,
           child: Text(
             totalPatients,
-            style: TextStyle(
-              fontSize: 14.sp,
+            style: const TextStyle(
+              fontSize: 14,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -118,8 +117,8 @@ Widget buildTabelData(
           flex: 1,
           child: Text(
             registeredDate,
-            style: TextStyle(
-              fontSize: 14.sp,
+            style: const TextStyle(
+              fontSize: 14,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -127,7 +126,7 @@ Widget buildTabelData(
           child: Text(
             "Edit",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           ),

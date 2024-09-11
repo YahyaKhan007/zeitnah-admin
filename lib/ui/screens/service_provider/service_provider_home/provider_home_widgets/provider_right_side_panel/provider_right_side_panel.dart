@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../appointment_free_slot/appointment_free_slot.dart';
 import '../../settings_for_provider/profile_for_service_provider.dart';
@@ -8,15 +7,16 @@ import '../../users/my_users_home.dart';
 
 class ProviderRightSidePanel extends StatelessWidget {
   final PageController adminPageController;
+
   const ProviderRightSidePanel({super.key, required this.adminPageController});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.r)),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
       child: Padding(
-        padding: const EdgeInsets.only(top: 24).h,
+        padding: const EdgeInsets.only(top: 24),
         child: SizedBox(
           height: size.height,
           width: size.width * 0.75,
@@ -27,7 +27,7 @@ class ProviderRightSidePanel extends StatelessWidget {
               const AppointmentFreeSlot(),
               ServiceProviderMyUsersHome(),
               const StatisticsForProvider(),
-             const  ProfileForProvider()
+              const ProfileForProvider()
               // ShowAdminProfile(),
             ],
           ),

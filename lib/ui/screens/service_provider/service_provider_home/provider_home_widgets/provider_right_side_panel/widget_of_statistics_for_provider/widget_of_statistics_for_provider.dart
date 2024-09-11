@@ -1,6 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../constants/app_colors/app_colors.dart';
 
@@ -19,7 +18,7 @@ class StatisticGraphWidget extends StatelessWidget {
           width: size.width * 0.72,
           height: size.height * 0.4,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.r),
+            borderRadius: BorderRadius.circular(16),
             color: AppColors.kcPrimaryWhite,
           ),
           child: Container(
@@ -51,8 +50,8 @@ class StatisticGraphWidget extends StatelessWidget {
                                 if (value % 100 == 0) {
                                   return Text(
                                     value.toInt().toString(),
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 12.sp),
+                                    style: const TextStyle(
+                                        color: Colors.white, fontSize: 12),
                                   );
                                 }
                                 return Container();
@@ -81,11 +80,11 @@ class StatisticGraphWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                8.h.verticalSpace,
-                Text(
+                const SizedBox(height: 8),
+                const Text(
                   'Assigned Appointments',
                   style: TextStyle(
-                      color: AppColors.kcPrimaryTextColor, fontSize: 16.sp),
+                      color: AppColors.kcPrimaryTextColor, fontSize: 16),
                 ),
                 Text.rich(
                   TextSpan(
@@ -94,30 +93,30 @@ class StatisticGraphWidget extends StatelessWidget {
                           text: '(+5) ',
                           style: TextStyle(
                             color: Colors.green.withOpacity(0.5),
-                            fontSize: 10.sp,
+                            fontSize: 10,
                           )),
                       TextSpan(
                         text: 'than Last Week',
                         style: TextStyle(
                           color:
                               AppColors.kcSecondaryTextColor.withOpacity(0.5),
-                          fontSize: 10.sp,
+                          fontSize: 10,
                         ),
                       ),
                     ],
                   ),
                 ),
-                8.h.verticalSpace,
+                const SizedBox(height: 8),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ListTile(
                       contentPadding: EdgeInsets.zero,
                       leading: Container(
-                        height: 24.h,
-                        width: 24.w,
+                        height: 24,
+                        width: 24,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6.r),
+                            borderRadius: BorderRadius.circular(6),
                             color: AppColors.kcPrimaryColor),
                         child: Image.asset('assets/icons/provider.png'),
                       ),
@@ -125,12 +124,12 @@ class StatisticGraphWidget extends StatelessWidget {
                         'Patients',
                         style: TextStyle(
                             color: AppColors.kcgreyFieldColor.withOpacity(0.5),
-                            fontSize: 10.sp),
+                            fontSize: 10),
                       ),
                     ),
                     Text(
                       125.toString(),
-                      style: TextStyle(color: Colors.black, fontSize: 12.sp),
+                      style: const TextStyle(color: Colors.black, fontSize: 12),
                     )
                   ],
                 )
@@ -176,26 +175,26 @@ class StatisticRowWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        const StatisticContainerWidget(
+        StatisticContainerWidget(
           count: 385,
           image: 'assets/icons/provider.png',
           label: 'Connected Patients',
         ),
-        48.w.horizontalSpace,
-        const StatisticContainerWidget(
+        SizedBox(width: 48),
+        StatisticContainerWidget(
           count: 385,
           image: 'assets/icons/appointment.png',
           label: 'Assigned Appointments This Month',
         ),
-        48.w.horizontalSpace,
-        const StatisticContainerWidget(
+        SizedBox(width: 48),
+        StatisticContainerWidget(
           count: 385,
           image: 'assets/icons/appointment.png',
           label: 'Total Assigned Appointments',
         ),
-        48.w.horizontalSpace,
+        SizedBox(width: 48),
       ],
     );
   }
@@ -220,9 +219,9 @@ class StatisticContainerWidget extends StatelessWidget {
         child: Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(16),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.w),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -231,15 +230,15 @@ class StatisticContainerWidget extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: TextStyle(
-                    fontSize: 12.sp,
+                style: const TextStyle(
+                    fontSize: 12,
                     color: AppColors.kcSecondaryTextColor,
                     fontWeight: FontWeight.normal),
               ),
               Text(
                 count.toString(),
-                style: TextStyle(
-                    fontSize: 12.sp,
+                style: const TextStyle(
+                    fontSize: 12,
                     color: AppColors.kcPrimaryTextColor,
                     fontWeight: FontWeight.normal),
               ),
@@ -249,7 +248,7 @@ class StatisticContainerWidget extends StatelessWidget {
             height: size.height * 0.05,
             width: size.width * 0.025,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               color: AppColors.kcPrimaryColor,
             ),
             child: Center(

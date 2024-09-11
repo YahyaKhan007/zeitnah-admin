@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'widget_of_settings_for_provider/profile_sections.dart';
 
@@ -16,7 +15,7 @@ class ProfileForProvider extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ProfileSectionWidget(),
-          32.h.verticalSpace,
+          const SizedBox(height: 32),
           const MyQrCodeSectionWidget()
         ],
       ),

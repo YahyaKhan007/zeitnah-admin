@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // import 'package:get/get.dart';
 
 // import '../../../../services/get_controllers_service/zeitnah_admin_controller.dart';
@@ -18,7 +18,7 @@ class TotalAppointmentsForAdmin extends StatelessWidget {
       height: size.height * 0.8,
       width: size.width * 0.77,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(016.r),
+        borderRadius: BorderRadius.circular(016),
         color: AppColors.kcPrimaryWhite,
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -30,22 +30,22 @@ class TotalAppointmentsForAdmin extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.only(top: 24.h),
+      padding: const EdgeInsets.only(top: 24),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24).w,
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Appointments",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.kcPrimaryTextColor,
-                  fontSize: 18.sp),
+                  fontSize: 18),
             ),
-            16.h.verticalSpace,
+            const SizedBox(height: 16),
             buildAppointmentLabels(),
-            8.h.verticalSpace,
+            const SizedBox(height: 8),
             Expanded(
               child: ListView.separated(
                 itemCount: AppStrings.providerPhotos.length,

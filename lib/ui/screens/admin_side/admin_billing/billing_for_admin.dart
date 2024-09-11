@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constants/app_colors/app_colors.dart';
 import '../../../constants/app_strings.dart/app_strings.dart';
@@ -16,7 +15,7 @@ class BillingAndPaymentsForAdmin extends StatelessWidget {
       height: size.height * 0.8,
       width: size.width * 0.77,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(016.r),
+        borderRadius: BorderRadius.circular(016),
         color: AppColors.kcPrimaryWhite,
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -28,22 +27,22 @@ class BillingAndPaymentsForAdmin extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.only(top: 24.h),
+      padding: const EdgeInsets.only(top: 24),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24).w,
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Billing and Payments",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.kcPrimaryTextColor,
-                  fontSize: 18.sp),
+                  fontSize: 18),
             ),
-            16.h.verticalSpace,
+            const SizedBox(height: 16),
             buildBillingLabels(),
-            8.h.verticalSpace,
+            const SizedBox(height: 8),
             Expanded(
               child: ListView.separated(
                 itemCount: AppStrings.providerPhotos.length,

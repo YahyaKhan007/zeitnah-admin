@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../../services/get_controllers_service/zeitnah_admin_controller.dart';
@@ -34,7 +33,7 @@ class ProviderHomeTopbarWidget extends StatelessWidget {
             () => SizedBox(
               width: size.width * 0.7,
               child: Padding(
-                padding: const EdgeInsets.only(left: 40).w,
+                padding: const EdgeInsets.only(left: 40),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +69,7 @@ class ProviderHomeTopbarWidget extends StatelessWidget {
                             height: size.height * 0.05,
                             width: size.width * 0.15,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(40.r),
+                              borderRadius: BorderRadius.circular(40),
                               color: AppColors.kcPrimaryWhite,
                             ),
                             alignment: Alignment.centerLeft,
@@ -79,13 +78,13 @@ class ProviderHomeTopbarWidget extends StatelessWidget {
                             child: TextFormField(
                               decoration: InputDecoration(
                                   prefixIcon: Icon(Icons.search,
-                                      size: 16.r,
+                                      size: 16,
                                       color: AppColors.kcgreyFieldColor
                                           .withOpacity(0.6)),
                                   hintText: "Type here ...",
                                   border: InputBorder.none,
                                   hintStyle: TextStyle(
-                                      fontSize: 10.sp,
+                                      fontSize: 12,
                                       color: AppColors.kcgreyFieldColor
                                           .withOpacity(0.6))),
                             ),
@@ -93,12 +92,12 @@ class ProviderHomeTopbarWidget extends StatelessWidget {
                         )
                       ],
                     ),
-                    4.h.verticalSpace,
-                    Text(
+                    const SizedBox(height: 4),
+                    const Text(
                       "Dashboard",
                       style: TextStyle(
                         color: AppColors.kcPrimaryTextColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                       ),
                     ),
                   ],

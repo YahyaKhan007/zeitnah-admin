@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../constants/app_colors/app_colors.dart';
@@ -18,11 +16,11 @@ class UserRequestForProvider extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: Container(
           margin: EdgeInsets.only(left: size.width * 0.1),
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           height: size.height * 0.75,
           width: size.width * 0.35,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.r),
+              borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
                     color: AppColors.kcgreyFieldColor.withOpacity(0.5),
@@ -31,22 +29,22 @@ class UserRequestForProvider extends StatelessWidget {
               ],
               color: AppColors.kcPrimaryWhite),
           child: Padding(
-            padding: const EdgeInsets.all(16.0).w,
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Client Requests",
                   style: TextStyle(
-                      fontSize: 18.sp, color: AppColors.kcPrimaryBlackColor),
+                      fontSize: 18, color: AppColors.kcPrimaryBlackColor),
                 ),
-                24.h.verticalSpace,
+                const SizedBox(height: 24),
                 Text(
                   "Users",
                   style: TextStyle(
-                      fontSize: 12.sp, color: AppColors.kcPrimaryBlackColor),
+                      fontSize: 12, color: AppColors.kcPrimaryBlackColor),
                 ),
-                8.h.verticalSpace,
+                const SizedBox(height: 8),
                 Expanded(
                     child: ListView.separated(
                         separatorBuilder: (context, index) => const Divider(
@@ -75,11 +73,11 @@ class UserRequestForProvider extends StatelessWidget {
             children: [
               Text("Alexa Liras",
                   style: TextStyle(
-                      color: AppColors.kcPrimaryBlackColor, fontSize: 14.sp)),
-              Text(
+                      color: AppColors.kcPrimaryBlackColor, fontSize: 14)),
+              const Text(
                 "alexa@simmmple.com",
-                style: TextStyle(
-                    color: AppColors.kcgreyFieldColor, fontSize: 14.sp),
+                style:
+                    TextStyle(color: AppColors.kcgreyFieldColor, fontSize: 14),
               )
             ],
           ),
@@ -97,7 +95,7 @@ class UserRequestForProvider extends StatelessWidget {
                   onTap: () {},
                 ),
               ),
-              32.w.horizontalSpace,
+              const SizedBox(width: 32),
               Expanded(
                 child: acceptRejectOption(
                   color: AppColors.kcPrimaryBlackColor,
@@ -121,10 +119,10 @@ class UserRequestForProvider extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8.h),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(40.r),
+          borderRadius: BorderRadius.circular(40),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -132,11 +130,10 @@ class UserRequestForProvider extends StatelessWidget {
           children: [
             SvgPicture.asset(
                 isTick ? 'assets/icons/check.svg' : 'assets/icons/close.svg'),
-            16.w.horizontalSpace,
+            const SizedBox(width: 16),
             Text(
               label,
-              style:
-                  TextStyle(fontSize: 16.sp, color: AppColors.kcPrimaryWhite),
+              style: const TextStyle(fontSize: 16, color: AppColors.kcPrimaryWhite),
             )
           ],
         ),

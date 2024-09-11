@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 
@@ -20,11 +19,11 @@ class AppointmentFreeSlot extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: Container(
           margin: EdgeInsets.only(left: size.width * 0.1),
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           height: size.height * 0.75,
           width: size.width * 0.35,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.r),
+              borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
                     color: AppColors.kcgreyFieldColor.withOpacity(0.5),
@@ -34,19 +33,19 @@ class AppointmentFreeSlot extends StatelessWidget {
               color: AppColors.kcPrimaryWhite),
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(16).w,
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  8.h.verticalSpace,
-                  Text(
+                  const SizedBox(height: 8),
+                  const Text(
                     "Appointment Free Slot",
                     style: TextStyle(
                         color: AppColors.kcPrimaryTextColor,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16.sp),
+                        fontSize: 16),
                   ),
-                  24.h.verticalSpace,
+                  const SizedBox(height: 24),
                   const AppointmentOptionWidget(
                     image: 'assets/icons/date.svg',
                     label: "Date",
@@ -65,7 +64,7 @@ class AppointmentFreeSlot extends StatelessWidget {
                   ),
                   // ~
                   const PriorityWidget(),
-                  16.h.verticalSpace,
+                  const SizedBox(height: 32),
 
                   GestureDetector(
                     onTap: () {
@@ -90,6 +89,7 @@ class AppointmentFreeSlot extends StatelessWidget {
 class AppointmentOptionWidget extends StatelessWidget {
   final String image;
   final String label;
+
   const AppointmentOptionWidget(
       {super.key, required this.image, required this.label});
 
@@ -98,20 +98,22 @@ class AppointmentOptionWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.06,
-      margin: EdgeInsets.only(bottom: 24.h),
+      // height: size.height * 0.06,
+      height: 48,
+      margin: const EdgeInsets.only(bottom: 24),
       width: size.width,
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.kcgreyFieldColor,
         ),
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(8),
       ),
       // padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Center(
         child: ListTile(
           leading: SvgPicture.asset(
             image,
+            height: 32,
             color: Colors.blueAccent,
           ), // Image.asset(
           //   image,
@@ -119,8 +121,7 @@ class AppointmentOptionWidget extends StatelessWidget {
           // ),
           title: Text(
             label,
-            style:
-                TextStyle(color: AppColors.kcPrimaryTextColor, fontSize: 12.sp),
+            style: const TextStyle(color: AppColors.kcPrimaryTextColor, fontSize: 14),
           ),
         ),
       ),

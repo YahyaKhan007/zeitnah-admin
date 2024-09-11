@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../constants/app_colors/app_colors.dart';
@@ -12,7 +11,7 @@ Widget buildLabelsForMyUsers() {
           child: Text(
             "Users",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -21,7 +20,7 @@ Widget buildLabelsForMyUsers() {
           child: Text(
             "Phone Number",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -30,7 +29,7 @@ Widget buildLabelsForMyUsers() {
           child: Text(
             "Status",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -39,11 +38,11 @@ Widget buildLabelsForMyUsers() {
           child: Text(
             "Registered",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
-      48.w.horizontalSpace,
+      const SizedBox(width: 48),
     ],
   );
 }
@@ -72,15 +71,15 @@ Widget buildTabelDataForMyUsers({
                 children: [
                   Text(
                     providerName,
-                    style: TextStyle(
-                      fontSize: 14.sp,
+                    style: const TextStyle(
+                      fontSize: 14,
                       color: AppColors.kcPrimaryTextColor,
                     ),
                   ),
                   Text(
                     providerEmail,
                     style: TextStyle(
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                     ),
                   )
@@ -92,8 +91,8 @@ Widget buildTabelDataForMyUsers({
           flex: 2,
           child: Text(
             phoneNumber,
-            style: TextStyle(
-              fontSize: 14.sp,
+            style: const TextStyle(
+              fontSize: 14,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -111,8 +110,8 @@ Widget buildTabelDataForMyUsers({
           flex: 1,
           child: Text(
             registeredDate,
-            style: TextStyle(
-              fontSize: 14.sp,
+            style: const TextStyle(
+              fontSize: 14,
               color: AppColors.kcPrimaryTextColor,
             ),
           )),
@@ -120,7 +119,7 @@ Widget buildTabelDataForMyUsers({
           child: Text(
             "Edit",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zeitnah_admin/ui/screens/admin_side/settings/admin_setting_widgets/admin_textField_with_label.dart';
 import 'package:zeitnah_admin/ui/screens/admin_side/settings/admin_setting_widgets/edit_profile_widgets.dart';
 
@@ -22,7 +21,7 @@ class ShowAdminProfile extends StatelessWidget {
       height: size.height * 0.8,
       width: size.width * 0.77,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(016.r),
+        borderRadius: BorderRadius.circular(016),
         color: AppColors.kcPrimaryWhite,
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -34,22 +33,22 @@ class ShowAdminProfile extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.only(top: 24.h),
+      padding: const EdgeInsets.only(top: 24),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24).w,
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Profile",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.kcPrimaryTextColor,
-                  fontSize: 18.sp),
+                  fontSize: 18),
             ),
-            16.h.verticalSpace,
+            const SizedBox(height: 16),
             const EditProfileWidget(),
-            16.h.verticalSpace,
+            const SizedBox(height: 16),
             Wrap(
               spacing: 32,
               runSpacing: 32,

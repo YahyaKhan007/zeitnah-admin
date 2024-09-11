@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +7,7 @@ import '../../../../../../constants/app_colors/app_colors.dart';
 
 class UserPageOptionWidget extends StatelessWidget {
   final PageController userPageController;
+
   const UserPageOptionWidget({super.key, required this.userPageController});
 
   @override
@@ -32,7 +32,7 @@ class UserPageOptionWidget extends StatelessWidget {
             controller.providerUserTab.value = 0;
           },
         ),
-        16.w.horizontalSpace,
+        const SizedBox(width: 16),
         customOptionContainerForUser(
             controller: controller,
             label: "User Requests",
@@ -62,10 +62,10 @@ class UserPageOptionWidget extends StatelessWidget {
       () => GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 40.h,
-          width: size.width * 0.1,
+          // height: size.height * 0.05,
+          width: 250,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.r),
+            borderRadius: BorderRadius.circular(8),
             color: controller.providerUserTab.value == index
                 ? AppColors.kcPrimaryColor
                 : AppColors.kcPrimaryWhite,
@@ -77,16 +77,20 @@ class UserPageOptionWidget extends StatelessWidget {
           ),
           child: Center(
             child: ListTile(
-              contentPadding: EdgeInsets.only(left: 8.w, right: 2.w),
+              // contentPadding: EdgeInsets.only(left: 8.w, right: 2.w),
+
               leading: Container(
-                height: 24.h,
-                width: 24.w,
+                // height: size.height * 0.03,
+                // width: size.width * 0.015,
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                height: 32,
+                width: 32,
                 decoration: BoxDecoration(
                   color: controller.providerUserTab.value == index
                       ? AppColors.kcPrimaryWhite
                       : AppColors.kcPrimaryColor,
                   borderRadius: BorderRadius.circular(
-                    8.r,
+                    8,
                   ),
                 ),
                 child: Center(
@@ -95,7 +99,8 @@ class UserPageOptionWidget extends StatelessWidget {
                     color: controller.providerUserTab.value == index
                         ? AppColors.kcPrimaryColor
                         : AppColors.kcPrimaryWhite,
-                    height: size.height * 0.015,
+                    // height: size.height * 0.015,
+                    height: 18,
                   ),
                 ),
               ),
@@ -104,7 +109,7 @@ class UserPageOptionWidget extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                      fontSize: 10.sp,
+                      fontSize: 16,
                       color: controller.providerUserTab.value == index
                           ? AppColors.kcPrimaryWhite
                           : AppColors.kcPrimaryTextColor,
@@ -113,13 +118,14 @@ class UserPageOptionWidget extends StatelessWidget {
               ),
               trailing: Visibility(
                 visible: show,
-                child: CircleAvatar(
-                  radius: 14.r,
+                child: const CircleAvatar(
+                  // radius: size.height * 0.015,
+                  radius: 18,
                   backgroundColor: AppColors.kcPrimaryColor,
                   child: Text(
                     "+2",
                     style: TextStyle(
-                        color: AppColors.kcPrimaryWhite, fontSize: 10.sp),
+                        color: AppColors.kcPrimaryWhite, fontSize: 12),
                   ),
                 ),
               ),

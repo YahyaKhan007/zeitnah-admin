@@ -1,6 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 
 import '../../../service_provider/service_provider_home/provider_home_widgets/provider_right_side_panel/widget_of_statistics_for_provider/widget_of_statistics_for_provider.dart';
@@ -19,7 +18,7 @@ class AdminDashboard extends StatelessWidget {
       child: Column(
         children: [
           dashboardTopBar(size: size, context: context),
-          16.h.verticalSpace,
+          const SizedBox(height: 16),
           dashboardGraphs(context: context, size: size)
         ],
       ),
@@ -33,7 +32,7 @@ class AdminDashboard extends StatelessWidget {
     return Row(
       children: [
         graphContainer1(graphNo: 1, size: size),
-        24.w.horizontalSpace,
+        const SizedBox(width: 24),
         graphContainer1(graphNo: 2, size: size),
       ],
     );
@@ -46,7 +45,7 @@ class AdminDashboard extends StatelessWidget {
         height: size.height * 0.5,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16),
         ),
         child: graphNo == 1
             ? graph1Data(size: size, activeUsers: 2000)
@@ -57,7 +56,7 @@ class AdminDashboard extends StatelessWidget {
 
   Widget graph1Data({required Size size, required int activeUsers}) {
     return Padding(
-      padding: const EdgeInsets.all(16).h,
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -84,8 +83,8 @@ class AdminDashboard extends StatelessWidget {
                           if (value % 100 == 0) {
                             return Text(
                               value.toInt().toString(),
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 12.sp),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 12),
                             );
                           }
                           return Container();
@@ -114,11 +113,10 @@ class AdminDashboard extends StatelessWidget {
               ),
             ),
           ),
-          16.h.verticalSpace,
-          Text(
+          const SizedBox(height: 16),
+          const Text(
             "Active Users",
-            style:
-                TextStyle(fontSize: 12.sp, color: AppColors.kcPrimaryTextColor),
+            style: TextStyle(fontSize: 12, color: AppColors.kcPrimaryTextColor),
           ),
           Text.rich(
             TextSpan(
@@ -127,29 +125,29 @@ class AdminDashboard extends StatelessWidget {
                     text: '(+23) ',
                     style: TextStyle(
                       color: Colors.green.withOpacity(0.5),
-                      fontSize: 10.sp,
+                      fontSize: 10,
                     )),
                 TextSpan(
                   text: 'than Last Week',
                   style: TextStyle(
                     color: AppColors.kcSecondaryTextColor.withOpacity(0.5),
-                    fontSize: 10.sp,
+                    fontSize: 10,
                   ),
                 ),
               ],
             ),
           ),
-          8.h.verticalSpace,
+          const SizedBox(height: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: Container(
-                  height: 24.h,
-                  width: 24.w,
+                  height: 24,
+                  width: 24,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6.r),
+                      borderRadius: BorderRadius.circular(6),
                       color: AppColors.kcPrimaryColor),
                   child: Image.asset('assets/icons/provider.png'),
                 ),
@@ -157,12 +155,12 @@ class AdminDashboard extends StatelessWidget {
                   'Users',
                   style: TextStyle(
                       color: AppColors.kcgreyFieldColor.withOpacity(0.5),
-                      fontSize: 10.sp),
+                      fontSize: 10),
                 ),
               ),
               Text(
                 activeUsers.toString(),
-                style: TextStyle(color: Colors.black, fontSize: 12.sp),
+                style: const TextStyle(color: Colors.black, fontSize: 12),
               )
             ],
           )
@@ -173,16 +171,15 @@ class AdminDashboard extends StatelessWidget {
 
   Widget graph2Data() {
     return Padding(
-      padding: const EdgeInsets.all(16).h,
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Usage Stats",
-            style:
-                TextStyle(fontSize: 12.sp, color: AppColors.kcPrimaryTextColor),
+            style: TextStyle(fontSize: 12, color: AppColors.kcPrimaryTextColor),
           ),
-          8.h.verticalSpace,
+          const SizedBox(height: 8),
           Text.rich(
             TextSpan(
               children: [
@@ -190,13 +187,13 @@ class AdminDashboard extends StatelessWidget {
                     text: '(+5) more ',
                     style: TextStyle(
                       color: Colors.green.withOpacity(0.5),
-                      fontSize: 10.sp,
+                      fontSize: 10,
                     )),
                 TextSpan(
                   text: 'in 2021',
                   style: TextStyle(
                     color: AppColors.kcSecondaryTextColor.withOpacity(0.5),
-                    fontSize: 10.sp,
+                    fontSize: 10,
                   ),
                 ),
               ],
@@ -218,7 +215,7 @@ class AdminDashboard extends StatelessWidget {
                             return Text(
                               value.toInt().toString(),
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 12),
+                                  const TextStyle(color: Colors.black, fontSize: 12),
                             );
                           }
                           return Container();
@@ -226,13 +223,13 @@ class AdminDashboard extends StatelessWidget {
                       ),
                     ),
                     bottomTitles:
-                        AxisTitles(sideTitles: SideTitles(showTitles: true)),
+                        const AxisTitles(sideTitles: SideTitles(showTitles: true)),
                     topTitles:
-                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                     rightTitles:
-                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                   ),
-                  gridData: FlGridData(show: true),
+                  gridData: const FlGridData(show: true),
                   borderData: FlBorderData(
                     show: true,
                     border: Border.all(color: Colors.grey, width: 1),
@@ -246,34 +243,34 @@ class AdminDashboard extends StatelessWidget {
                       isCurved: true,
                       color: Colors.teal.withOpacity(0.5),
                       spots: [
-                        FlSpot(0, 200),
-                        FlSpot(1, 150),
-                        FlSpot(2, 300),
-                        FlSpot(3, 250),
-                        FlSpot(4, 350),
-                        FlSpot(5, 200),
-                        FlSpot(6, 400),
-                        FlSpot(7, 300),
-                        FlSpot(8, 250),
-                        FlSpot(9, 350),
-                        FlSpot(10, 400),
+                        const FlSpot(0, 200),
+                        const FlSpot(1, 150),
+                        const FlSpot(2, 300),
+                        const FlSpot(3, 250),
+                        const FlSpot(4, 350),
+                        const FlSpot(5, 200),
+                        const FlSpot(6, 400),
+                        const FlSpot(7, 300),
+                        const FlSpot(8, 250),
+                        const FlSpot(9, 350),
+                        const FlSpot(10, 400),
                       ],
                     ),
                     _createLineBarData(
                       isCurved: true,
                       color: Colors.tealAccent.withOpacity(0.3),
                       spots: [
-                        FlSpot(0, 100),
-                        FlSpot(1, 80),
-                        FlSpot(2, 200),
-                        FlSpot(3, 150),
-                        FlSpot(4, 250),
-                        FlSpot(5, 100),
-                        FlSpot(6, 300),
-                        FlSpot(7, 200),
-                        FlSpot(8, 150),
-                        FlSpot(9, 250),
-                        FlSpot(10, 300),
+                        const FlSpot(0, 100),
+                        const FlSpot(1, 80),
+                        const FlSpot(2, 200),
+                        const FlSpot(3, 150),
+                        const FlSpot(4, 250),
+                        const FlSpot(5, 100),
+                        const FlSpot(6, 300),
+                        const FlSpot(7, 200),
+                        const FlSpot(8, 150),
+                        const FlSpot(9, 250),
+                        const FlSpot(10, 300),
                       ],
                     ),
                   ],

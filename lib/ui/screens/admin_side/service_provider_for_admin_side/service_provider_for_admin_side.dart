@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:get/get.dart';
+import 'package:flutter/material.dart'; // import 'package:get/get.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 import 'package:zeitnah_admin/ui/constants/app_strings.dart/app_strings.dart';
 
@@ -18,7 +16,7 @@ class ServiceProvidersForAdminSide extends StatelessWidget {
       height: size.height * 0.8,
       width: size.width * 0.77,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(016.r),
+        borderRadius: BorderRadius.circular(016),
         color: AppColors.kcPrimaryWhite,
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -30,22 +28,22 @@ class ServiceProvidersForAdminSide extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.only(top: 24.h),
+      padding: const EdgeInsets.only(top: 24),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24).w,
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Service Providers",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.kcPrimaryTextColor,
-                  fontSize: 18.sp),
+                  fontSize: 18),
             ),
-            16.h.verticalSpace,
+            const SizedBox(height: 16),
             buildLabels(),
-            8.h.verticalSpace,
+            const SizedBox(height: 8),
             Expanded(
               child: ListView.separated(
                 itemCount: AppStrings.providerPhotos.length,

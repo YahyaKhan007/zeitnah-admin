@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,9 +20,9 @@ Widget topBar({required Size size, required BuildContext context}) {
               Text(
                 "Admin Panel",
                 style: GoogleFonts.inter(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                         color: AppColors.kcPrimaryTextColor,
-                        fontSize: 24.sp,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold)),
               ),
             ],
@@ -33,7 +32,7 @@ Widget topBar({required Size size, required BuildContext context}) {
           () => SizedBox(
             width: size.width * 0.7,
             child: Padding(
-              padding: const EdgeInsets.only(left: 40).w,
+              padding: const EdgeInsets.only(left: 40),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,19 +42,32 @@ Widget topBar({required Size size, required BuildContext context}) {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "pages ",
-                              style: TextStyle(
-                                  color: AppColors.kcgreyFieldColor
-                                      .withOpacity(0.5)),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "pages ",
+                                  style: TextStyle(
+                                      color: AppColors.kcgreyFieldColor
+                                          .withOpacity(0.5)),
+                                ),
+                                Text(
+                                  "/ ${zeitnahControler.selectedPage.value}",
+                                  style: const TextStyle(
+                                    color: AppColors.kcPrimaryTextColor,
+                                  ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              "/ ${zeitnahControler.selectedPage.value}",
-                              style: const TextStyle(
+                            const SizedBox(height: 4),
+                            const Text(
+                              "Dashboard",
+                              style: TextStyle(
                                 color: AppColors.kcPrimaryTextColor,
+                                fontSize: 16,
                               ),
                             ),
                           ],
@@ -65,41 +77,35 @@ Widget topBar({required Size size, required BuildContext context}) {
                         visible: !zeitnahControler.selectedPage.value
                             .startsWith('Dash'),
                         child: Container(
-                          height: size.height * 0.05,
+                          // height: size.height * 0.05,
+                          height: 48,
+
                           width: size.width * 0.15,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40.r),
+                            borderRadius: BorderRadius.circular(40),
                             color: AppColors.kcPrimaryWhite,
                           ),
-                          padding: EdgeInsets.only(
-                              left: 8.w, right: 8.w, bottom: 16.h),
+                          padding:
+                              const EdgeInsets.only(left: 8, right: 8, bottom: 0),
                           child: TextFormField(
                             decoration: InputDecoration(
                                 prefixIcon: Padding(
-                                  padding: const EdgeInsets.only(top: 8).h,
+                                  padding: const EdgeInsets.only(top: 0),
                                   child: Icon(Icons.search,
-                                      size: 16.r,
+                                      size: 16,
                                       color: AppColors.kcgreyFieldColor
                                           .withOpacity(0.6)),
                                 ),
                                 hintText: "Type here ...",
                                 border: InputBorder.none,
                                 hintStyle: TextStyle(
-                                    fontSize: 10.sp,
+                                    fontSize: 12,
                                     color: AppColors.kcgreyFieldColor
                                         .withOpacity(0.6))),
                           ),
                         ),
                       )
                     ],
-                  ),
-                  4.h.verticalSpace,
-                  Text(
-                    "Dashboard",
-                    style: TextStyle(
-                      color: AppColors.kcPrimaryTextColor,
-                      fontSize: 16.sp,
-                    ),
                   ),
                 ],
               ),

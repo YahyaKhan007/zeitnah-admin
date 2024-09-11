@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../constants/app_colors/app_colors.dart';
 
@@ -12,7 +11,7 @@ Widget buildAppointmentLabels() {
           child: Text(
             "Users",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -22,7 +21,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Phone Number",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -33,7 +32,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Service Provider",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -44,7 +43,7 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Time",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -55,12 +54,12 @@ Widget buildAppointmentLabels() {
             child: Text(
               "Date",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
           )),
-      24.w.horizontalSpace,
+      const SizedBox(width: 24),
     ],
   );
 }
@@ -85,15 +84,15 @@ Widget buildAppointmentTabelData(
             children: [
               Text(
                 patientName,
-                style: TextStyle(
-                  fontSize: 14.sp,
+                style: const TextStyle(
+                  fontSize: 14,
                   color: AppColors.kcPrimaryTextColor,
                 ),
               ),
               Text(
                 providerEmail,
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: 14,
                   color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                 ),
               )
@@ -104,8 +103,8 @@ Widget buildAppointmentTabelData(
           child: Center(
             child: Text(
               phoneNumber,
-              style: TextStyle(
-                fontSize: 14.sp,
+              style: const TextStyle(
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -115,8 +114,8 @@ Widget buildAppointmentTabelData(
           child: Center(
             child: Text(
               providerName,
-              style: TextStyle(
-                fontSize: 14.sp,
+              style: const TextStyle(
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -126,8 +125,8 @@ Widget buildAppointmentTabelData(
           child: Center(
             child: Text(
               registerTime,
-              style: TextStyle(
-                fontSize: 14.sp,
+              style: const TextStyle(
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -137,13 +136,13 @@ Widget buildAppointmentTabelData(
           child: Center(
             child: Text(
               registeredDate,
-              style: TextStyle(
-                fontSize: 14.sp,
+              style: const TextStyle(
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
           )),
-      24.w.horizontalSpace,
+      const SizedBox(width: 24),
     ],
   );
 }

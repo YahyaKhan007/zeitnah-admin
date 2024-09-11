@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -21,102 +20,105 @@ class PriorityWidget extends StatelessWidget {
         alignment: controller.isPriorityFunction.value == true
             ? Alignment.centerLeft
             : Alignment.center,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const PriorityOnOffWidget(),
-            Visibility(
-              visible: controller.isPriorityFunction.value,
-              child: Column(
-                children: [
-                  TweenAnimationBuilder(
-                    tween: Tween<double>(begin: 0, end: 1),
-                    duration: const Duration(milliseconds: 500),
-                    builder: (context, value, _) {
-                      return Container(
-                        // duration: const Duration(milliseconds: 1500),
-                        margin: EdgeInsets.only(left: 24.w),
-                        decoration: BoxDecoration(
-                            color: AppColors.kcPrimaryWhite,
-                            border: Border.all(
-                                color: AppColors.kcgreyFieldColor
-                                    .withOpacity(0.5)),
-                            borderRadius: BorderRadius.circular(8.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color:
-                                    AppColors.kcgreyFieldColor.withOpacity(0.4),
-                                offset: const Offset(0, 0),
-                                blurRadius: 3,
-                              )
-                            ]),
-                        width: size.width * 0.225 * value,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 16.w, vertical: 8.h),
-                        // height: 120.h,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 40,
-                              width: size.width,
-                              child: ListView.builder(
-                                shrinkWrap: true,
-                                physics: const NeverScrollableScrollPhysics(),
-                                scrollDirection: Axis.horizontal,
-                                itemCount: AppStrings.setPriorityTime.length,
-                                itemBuilder: (context, index) =>
-                                    Obx(() => SizedBox(
-                                          width: size.width * 0.08,
-                                          height: 40,
-                                          child: Row(
-                                            // mainAxisAlignment:
-                                            //     MainAxisAlignment.center,
-                                            // mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              // 24.w.horizontalSpace,
-                                              Text(
-                                                "${AppStrings.setPriorityTime[index]} min",
-                                                style: TextStyle(
-                                                    color: AppColors
-                                                        .kcPrimaryBlackColor,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 12.sp),
-                                              ),
-                                              Radio(
-                                                  value: AppStrings
-                                                      .setPriorityTime[index],
-                                                  groupValue: controller
-                                                      .setPriorityTime.value,
-                                                  onChanged: (value) {
-                                                    controller.setPriorityTime
-                                                        .value = value!;
-                                                    controller.customPriority
-                                                        .value = false;
-                                                  }),
-                                              // 8.w.horizontalSpace,
-                                            ],
-                                          ),
-                                        )),
+        child: Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const PriorityOnOffWidget(),
+              Visibility(
+                visible: controller.isPriorityFunction.value,
+                child: Column(
+                  children: [
+                    TweenAnimationBuilder(
+                      tween: Tween<double>(begin: 0, end: 1),
+                      duration: const Duration(milliseconds: 500),
+                      builder: (context, value, _) {
+                        return Container(
+                          // duration: const Duration(milliseconds: 1500),
+                          margin: const EdgeInsets.only(left: 24),
+                          decoration: BoxDecoration(
+                              color: AppColors.kcPrimaryWhite,
+                              border: Border.all(
+                                  color: AppColors.kcgreyFieldColor
+                                      .withOpacity(0.5)),
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.kcgreyFieldColor
+                                      .withOpacity(0.4),
+                                  offset: const Offset(0, 0),
+                                  blurRadius: 3,
+                                )
+                              ]),
+                          width: size.width * 0.185 * value,
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          // height: 120.h,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 40,
+                                width: size.width,
+                                child: ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: AppStrings.setPriorityTime.length,
+                                  itemBuilder: (context, index) =>
+                                      Obx(() => SizedBox(
+                                            width: size.width * 0.08,
+                                            height: 40,
+                                            child: Row(
+                                              // mainAxisAlignment:
+                                              //     MainAxisAlignment.center,
+                                              // mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                // 24.w.horizontalSpace,
+                                                Text(
+                                                  "${AppStrings.setPriorityTime[index]} min",
+                                                  style: TextStyle(
+                                                      color: AppColors
+                                                          .kcPrimaryBlackColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 12),
+                                                ),
+                                                Radio(
+                                                    value: AppStrings
+                                                        .setPriorityTime[index],
+                                                    groupValue: controller
+                                                        .setPriorityTime.value,
+                                                    onChanged: (value) {
+                                                      controller.setPriorityTime
+                                                          .value = value!;
+                                                      controller.customPriority
+                                                          .value = false;
+                                                    }),
+                                                // 8.w.horizontalSpace,
+                                              ],
+                                            ),
+                                          )),
+                                ),
                               ),
-                            ),
-                            8.h.verticalSpace,
-                            customButtom(size, AppColors.kcPrimaryBlackColor,
-                                size.width * 0.12, "Custom Time")
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ],
+                              const SizedBox(height: 16),
+                              customButtom(size, AppColors.kcPrimaryBlackColor,
+                                  size.width * 0.12, "Custom Time")
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
 
-            //
-            // AnimatedOpacity(opacity: opacity, duration: duration)
-          ],
+              //
+              // AnimatedOpacity(opacity: opacity, duration: duration)
+            ],
+          ),
         ),
       ),
     );
@@ -151,11 +153,11 @@ class PriorityOnOffWidget extends StatelessWidget {
                     : null,
               ),
             ),
-            8.w.horizontalSpace,
+            const SizedBox(width: 8),
             Text(
               'Priority Function',
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.kcPrimaryBlackColor,
               ),
@@ -185,19 +187,20 @@ class PriorityOnOffWidget extends StatelessWidget {
 Widget customButtom(Size size, Color color, double buttonSize, String label) {
   return Center(
     child: Container(
-      height: size.height * 0.045,
+      // height: size.height * 0.045,
       width: buttonSize,
+      height: 48,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(8),
         color: color,
       ),
-      padding: EdgeInsets.symmetric(vertical: 8.h),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Center(
           child: Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
             color: AppColors.kcPrimaryWhite,
-            fontSize: 8.sp,
+            fontSize: 12,
             fontWeight: FontWeight.w600),
       )),
     ),

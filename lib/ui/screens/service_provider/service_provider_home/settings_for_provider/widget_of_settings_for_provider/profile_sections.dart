@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +25,7 @@ class ProfileSectionWidget extends StatelessWidget {
       height: size.height * 0.45,
       width: size.width * 0.65,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16),
           color: AppColors.kcPrimaryWhite),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -34,16 +33,16 @@ class ProfileSectionWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Profile",
                 style: TextStyle(
                     color: AppColors.kcPrimaryTextColor,
-                    fontSize: 20.sp,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
-              8.h.verticalSpace,
+              const SizedBox(height: 8),
               profileRowWidget(size: size),
-              24.h.verticalSpace,
+              const SizedBox(height: 24),
               Wrap(
                 spacing: 32,
                 runSpacing: 16,
@@ -110,20 +109,20 @@ class ProfileSectionWidget extends StatelessWidget {
               backgroundImage:
                   const AssetImage('assets/images/profile_pic.png'),
             ),
-            16.w.horizontalSpace,
-            Column(
+            const SizedBox(width: 16),
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   "Bilal Hospital",
                   style: TextStyle(
-                      fontSize: 14.sp, color: AppColors.kcPrimaryTextColor),
+                      fontSize: 14, color: AppColors.kcPrimaryTextColor),
                 ),
                 Text(
                   "alexarawles@gmail.com",
                   style: TextStyle(
-                      fontSize: 14.sp, color: AppColors.kcgreyFieldColor),
+                      fontSize: 14, color: AppColors.kcgreyFieldColor),
                 )
               ],
             )
@@ -143,17 +142,17 @@ class ProfileSectionWidget extends StatelessWidget {
                   () => Container(
                     height: size.height * 0.05,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(8),
                       color: zeitnaControler.editProfile.value
                           ? AppColors.kcPrimaryGreen
                           : AppColors.kcPrimaryColor,
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 32.w),
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
                     child: Center(
                       child: Text(
                         zeitnaControler.editProfile.value ? "Update" : "Edit",
-                        style: TextStyle(
-                            fontSize: 14.sp, color: AppColors.kcPrimaryWhite),
+                        style: const TextStyle(
+                            fontSize: 14, color: AppColors.kcPrimaryWhite),
                       ),
                     ),
                   ),
@@ -175,22 +174,22 @@ class MyQrCodeSectionWidget extends StatelessWidget {
     return Container(
       height: size.height * 0.3,
       width: size.width * 0.25,
-      padding: const EdgeInsets.all(16).r,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16),
           color: AppColors.kcPrimaryWhite),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "My Qr Code",
             style: TextStyle(
-              fontSize: 20.sp,
+              fontSize: 20,
               color: AppColors.kcPrimaryTextColor,
               fontWeight: FontWeight.bold,
             ),
           ),
-          16.h.verticalSpace,
+          const SizedBox(height: 16),
           Center(
             child: SvgPicture.asset(
               'assets/images/my_qr_code.svg',

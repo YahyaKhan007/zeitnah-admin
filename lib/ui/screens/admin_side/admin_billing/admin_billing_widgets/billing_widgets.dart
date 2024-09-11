@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../constants/app_colors/app_colors.dart';
 
@@ -12,7 +11,7 @@ Widget buildBillingLabels() {
           child: Text(
             "Users",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           )),
@@ -22,7 +21,7 @@ Widget buildBillingLabels() {
             child: Text(
               "Amount",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -33,7 +32,7 @@ Widget buildBillingLabels() {
             child: Text(
               "Time",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
@@ -44,12 +43,12 @@ Widget buildBillingLabels() {
             child: Text(
               "Date",
               style: TextStyle(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: AppColors.kcgreyFieldColor.withOpacity(0.5),
               ),
             ),
           )),
-      48.w.horizontalSpace,
+      const SizedBox(width: 48),
     ],
   );
 }
@@ -74,15 +73,15 @@ Widget buildBillingTabelData(
             children: [
               Text(
                 patientName,
-                style: TextStyle(
-                  fontSize: 14.sp,
+                style: const TextStyle(
+                  fontSize: 14,
                   color: AppColors.kcPrimaryTextColor,
                 ),
               ),
               Text(
                 providerEmail,
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: 14,
                   color: AppColors.kcgreyFieldColor.withOpacity(0.5),
                 ),
               )
@@ -93,18 +92,18 @@ Widget buildBillingTabelData(
           child: Column(
             children: [
               Container(
-                height: 24.h,
-                width: 64.w,
+                height: 24,
+                width: 64,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.r),
+                    borderRadius: BorderRadius.circular(8),
                     color: AppColors.kcPrimaryGreen),
-                child: FittedBox(
+                child: const FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
                     // "\$$amount",
                     "\$512",
                     style: TextStyle(
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: AppColors.kcPrimaryWhite,
                     ),
                   ),
@@ -117,8 +116,8 @@ Widget buildBillingTabelData(
           child: Center(
             child: Text(
               registerTime,
-              style: TextStyle(
-                fontSize: 14.sp,
+              style: const TextStyle(
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -128,8 +127,8 @@ Widget buildBillingTabelData(
           child: Center(
             child: Text(
               registeredDate,
-              style: TextStyle(
-                fontSize: 14.sp,
+              style: const TextStyle(
+                fontSize: 14,
                 color: AppColors.kcPrimaryTextColor,
               ),
             ),
@@ -138,7 +137,7 @@ Widget buildBillingTabelData(
           child: Text(
             "Edit",
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: AppColors.kcgreyFieldColor.withOpacity(0.5),
             ),
           ),

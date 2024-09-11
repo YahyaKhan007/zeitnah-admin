@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../../services/get_controllers_service/zeitnah_admin_controller.dart';
@@ -13,14 +12,13 @@ class EditProfileWidget extends StatelessWidget {
     final zeitnahControler = Get.find<ZeitnahAdminController>();
 
     return ListTile(
-      title: Text(
+      title: const Text(
         "Admin Panel",
-        style: TextStyle(fontSize: 14.sp, color: AppColors.kcPrimaryTextColor),
+        style: TextStyle(fontSize: 14, color: AppColors.kcPrimaryTextColor),
       ),
-      subtitle: Text(
+      subtitle: const Text(
         "alexarawles@gmail.com",
-        style:
-            TextStyle(fontSize: 14.sp, color: AppColors.kcSecondaryTextColor),
+        style: TextStyle(fontSize: 14, color: AppColors.kcSecondaryTextColor),
       ),
       trailing: GestureDetector(
         onTap: () {
@@ -29,19 +27,18 @@ class EditProfileWidget extends StatelessWidget {
         },
         child: Obx(
           () => Container(
-            height: 32.h,
-            width: 64.w,
+            height: 32,
+            width: 64,
             decoration: BoxDecoration(
               color: zeitnahControler.editProfile.value
                   ? AppColors.kcPrimaryGreen
                   : AppColors.kcPrimaryColor,
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Center(
               child: Text(
                 zeitnahControler.editProfile.value ? "Update" : "Edit",
-                style:
-                    TextStyle(fontSize: 14.sp, color: AppColors.kcPrimaryWhite),
+                style: const TextStyle(fontSize: 14, color: AppColors.kcPrimaryWhite),
               ),
             ),
           ),
