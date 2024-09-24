@@ -27,8 +27,8 @@ class LoginScreen extends StatelessWidget {
       decoration: const BoxDecoration(
         color: AppColors.kcPrimaryWhite,
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(24),
-          topRight: Radius.circular(24),
+          bottomRight: Radius.circular(0),
+          topRight: Radius.circular(0),
         ),
       ),
       child: Padding(
@@ -38,6 +38,9 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisSize: MainAxisSize.min,
           children: [
+            SizedBox(
+              height: size.height * 0.05,
+            ),
             Center(child: Image.asset("assets/icons/app_icon.png")),
             Text(
               'Welcome back!',
@@ -197,8 +200,8 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         "Specify your role",
                         style: GoogleFonts.odorMeanChey(
-                            textStyle:
-                                const TextStyle(fontSize: 30, color: Colors.black)),
+                            textStyle: const TextStyle(
+                                fontSize: 30, color: Colors.black)),
                       ),
                     ),
                     const SizedBox(height: 32),

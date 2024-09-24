@@ -15,7 +15,7 @@ class ProfileForProvider extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ProfileSectionWidget(),
-          const SizedBox(height: 32),
+          SizedBox(height: size.height * 0.02),
           const MyQrCodeSectionWidget()
         ],
       ),

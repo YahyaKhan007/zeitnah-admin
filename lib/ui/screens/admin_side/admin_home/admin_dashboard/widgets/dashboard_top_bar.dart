@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../../constants/app_colors/app_colors.dart';
 
@@ -7,25 +8,25 @@ Widget dashboardTopBar({required Size size, required BuildContext context}) {
     children: [
       dashboardTopBarOption(
           count: 125,
-          image: 'assets/icons/appointment.png',
+          image: 'assets/icons/admin_provider.svg',
           label: 'Service Providers',
           size: size),
       const SizedBox(width: 16),
       dashboardTopBarOption(
           count: 80,
-          image: 'assets/icons/globe.png',
+          image: 'assets/icons/globe.svg',
           label: 'Active Users',
           size: size),
       const SizedBox(width: 16),
       dashboardTopBarOption(
           count: 115,
-          image: 'assets/icons/appointment.png',
+          image: 'assets/icons/admin_provider.svg',
           label: 'Assigned Appointments',
           size: size),
       const SizedBox(width: 16),
       dashboardTopBarOption(
           count: 385,
-          image: 'assets/icons/provider.png',
+          image: 'assets/icons/admin_appointment.svg',
           label: 'Total Users',
           size: size),
     ],
@@ -40,6 +41,13 @@ Widget dashboardTopBarOption(
   return Expanded(
       child: Container(
     decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          color: AppColors.kcgreyFieldColor.withOpacity(0.3),
+          offset: const Offset(0, 3),
+          blurRadius: 3,
+        )
+      ],
       color: Colors.white,
       borderRadius: BorderRadius.circular(16),
     ),
@@ -60,7 +68,7 @@ Widget dashboardTopBarOption(
             Text(
               count.toString(),
               style: const TextStyle(
-                  fontSize: 12,
+                  fontSize: 18,
                   color: AppColors.kcPrimaryTextColor,
                   fontWeight: FontWeight.normal),
             ),
@@ -74,7 +82,7 @@ Widget dashboardTopBarOption(
             color: AppColors.kcPrimaryColor,
           ),
           child: Center(
-            child: Image.asset(image),
+            child: SvgPicture.asset(image),
           ),
         )
       ],

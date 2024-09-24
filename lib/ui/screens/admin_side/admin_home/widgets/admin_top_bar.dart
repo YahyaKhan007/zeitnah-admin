@@ -76,35 +76,65 @@ Widget topBar({required Size size, required BuildContext context}) {
                       Visibility(
                         visible: !zeitnahControler.selectedPage.value
                             .startsWith('Dash'),
-                        child: Container(
-                          // height: size.height * 0.05,
-                          height: 48,
-
-                          width: size.width * 0.15,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: AppColors.kcPrimaryWhite,
-                          ),
-                          padding:
-                              const EdgeInsets.only(left: 8, right: 8, bottom: 0),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                                prefixIcon: Padding(
-                                  padding: const EdgeInsets.only(top: 0),
-                                  child: Icon(Icons.search,
+                        child: Center(
+                          child: Container(
+                            height: size.height * 0.06,
+                            // Set height relative to screen size
+                            width: size.width * 0.15,
+                            // Set width relative to screen size
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                              color: AppColors.kcPrimaryWhite,
+                            ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              // Optional padding for better spacing
+                              child: FittedBox(
+                                // FittedBox for dynamic scaling
+                                fit: BoxFit.scaleDown,
+                                // Scales the content dynamically
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.search,
                                       size: 16,
                                       color: AppColors.kcgreyFieldColor
-                                          .withOpacity(0.6)),
+                                          .withOpacity(0.6),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    // Small spacing between icon and input field
+                                    SizedBox(
+                                      width: size.width * 0.1,
+                                      // Dynamic width based on screen size
+                                      child: TextFormField(
+                                        textAlign: TextAlign.center,
+                                        // Centers the text
+                                        decoration: InputDecoration(
+                                          contentPadding:
+                                              const EdgeInsets.symmetric(
+                                                  vertical: 12),
+                                          // Vertical centering
+                                          hintText: "Type here ...",
+                                          border: InputBorder.none,
+                                          hintStyle: TextStyle(
+                                            fontSize: 12,
+                                            color: AppColors.kcgreyFieldColor
+                                                .withOpacity(0.6),
+                                          ),
+                                        ),
+                                        style: const TextStyle(
+                                            fontSize:
+                                                14), // Set text size to scale dynamically
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                hintText: "Type here ...",
-                                border: InputBorder.none,
-                                hintStyle: TextStyle(
-                                    fontSize: 12,
-                                    color: AppColors.kcgreyFieldColor
-                                        .withOpacity(0.6))),
+                              ),
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ],

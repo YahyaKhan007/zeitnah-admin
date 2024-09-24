@@ -13,7 +13,7 @@ class ServiceProviderMyUsersHome extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SizedBox(
-      height: size.height * 0.9, // Adjust the height to fit the container
+      height: size.height * 0.8, // Adjust the height to fit the container
       child: Column(
         children: [
           UserPageOptionWidget(
@@ -23,13 +23,12 @@ class ServiceProviderMyUsersHome extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
             child: SizedBox(
-              height: size.height * 0.75, // Give the container a height
-
+              height: size.height * 0.68, // Give the container a height
               child: PageView(
-                controller:
-                    userPageController, // Make sure to add the controller
+                controller: userPageController,
+                // Make sure to add the controller
                 children: const [
-                  MyUsers(),
+                  MyUsers(), // Removed Expanded here
                   UserRequestForProvider(),
                 ],
               ),

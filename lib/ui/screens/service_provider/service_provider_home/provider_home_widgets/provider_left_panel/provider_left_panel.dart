@@ -1,6 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:zeitnah_admin/services/get_controllers_service/zeitnah_admin_controller.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 
@@ -24,13 +26,17 @@ class ProviderLeftSidePanel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 16),
-          const Text(
-            "Praxis für Physiotherapie & Gesundheit - Eduard Stabel",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: AppColors.kcPrimaryTextColor),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              "Praxis für Physiotherapie & Gesundheit - Eduard Stabel",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'helvetica',
+                  fontSize: 14,
+                  color: AppColors.kcPrimaryTextColor),
+            ),
           ),
           const SizedBox(height: 8),
           const Padding(
@@ -41,83 +47,104 @@ class ProviderLeftSidePanel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 16, right: 24),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 _buildDashboardOption(
-                  image: 'assets/icons/home.png',
-                  index: 0,
-                  label: 'Dashboard',
-                  onTap: () {
-                    adminController.dashboardScreentIndex.value = 0;
-                    adminController.selectedPage.value = "Dashboard";
-                    adminPageController.animateToPage(
-                      0,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                ),
+                    image: 'assets/icons/admin_dashboard.svg',
+                    index: 0,
+                    label: 'Dashboard',
+                    onTap: () => _changePage(adminController, 0, "Dashboard")
+                    // onTap: () {
+                    //   adminController.dashboardScreentIndex.value = 0;
+                    //   adminController.selectedPage.value = "Dashboard";
+                    //   adminPageController.animateToPage(
+                    //     0,
+                    //     duration: const Duration(milliseconds: 300),
+                    //     curve: Curves.easeInOut,
+                    //   );
+                    // },
+                    ),
                 _buildDashboardOption(
-                  image: 'assets/icons/provider.png',
-                  index: 1,
-                  label: 'Users',
-                  onTap: () {
-                    adminController.dashboardScreentIndex.value = 1;
-                    adminController.selectedPage.value = "Users";
-
-                    adminPageController.animateToPage(
-                      1,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                ),
+                    image: 'assets/icons/admin_appointment.svg',
+                    index: 1,
+                    label: 'Users',
+                    onTap: () => _changePage(adminController, 1, "Users")
+                    // onTap: () {
+                    //   adminController.dashboardScreentIndex.value = 1;
+                    //   adminController.selectedPage.value = "Users";
+                    //
+                    //   adminPageController.animateToPage(
+                    //     1,
+                    //     duration: const Duration(milliseconds: 300),
+                    //     curve: Curves.easeInOut,
+                    //   );
+                    // },
+                    ),
                 _buildDashboardOption(
-                  image: 'assets/icons/appointment.png',
-                  index: 2,
-                  label: 'Statistics',
-                  onTap: () {
-                    adminController.dashboardScreentIndex.value = 2;
-                    adminController.selectedPage.value = "Statistics";
-
-                    adminPageController.animateToPage(
-                      2,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                ),
-                Text(
-                  "ACCOUNT SETTINGS",
-                  style: GoogleFonts.inter(
-                    textStyle: const TextStyle(
-                        letterSpacing: -0.5,
+                    image: 'assets/icons/admin_provider.svg',
+                    index: 2,
+                    label: 'Statistics',
+                    onTap: () => _changePage(adminController, 2, "Statistics")
+                    // onTap: () {
+                    //   adminController.dashboardScreentIndex.value = 2;
+                    //   adminController.selectedPage.value = "Statistics";
+                    //
+                    //   adminPageController.animateToPage(
+                    //     2,
+                    //     duration: const Duration(milliseconds: 300),
+                    //     curve: Curves.easeInOut,
+                    //   );
+                    // },
+                    ),
+                const Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Text(
+                    "ACCOUNT SETTINGS",
+                    style: TextStyle(
                         color: AppColors.kcPrimaryTextColor,
-                        fontSize: 18,
+                        fontSize: 12,
+                        fontFamily: 'helvetica',
                         fontWeight: FontWeight.normal),
                   ),
                 ),
                 const SizedBox(height: 8),
                 _buildDashboardOption(
-                  image: 'assets/icons/setting.png',
-                  index: 4,
-                  label: 'Settings',
-                  onTap: () {
-                    adminController.dashboardScreentIndex.value = 4;
-                    adminController.selectedPage.value = "Settings";
-
-                    adminPageController.animateToPage(
-                      4,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                ),
+                    image: 'assets/icons/settings.svg',
+                    index: 3,
+                    label: 'Settings',
+                    onTap: () => _changePage(adminController, 3, "Settings")
+                    // onTap: () {
+                    //   adminController.dashboardScreentIndex.value = 4;
+                    //   adminController.selectedPage.value = "Settings";
+                    //
+                    //   adminPageController.animateToPage(
+                    //     4,
+                    //     duration: const Duration(milliseconds: 300),
+                    //     curve: Curves.easeInOut,
+                    //   );
+                    // },
+                    ),
               ],
             ),
           )
         ],
       ),
     );
+  }
+
+  void _changePage(
+      ZeitnahAdminController controller, int index, String pageName) {
+    if (controller.dashboardScreentIndex.value != index) {
+      controller.dashboardScreentIndex.value = index;
+      controller.providerUserTab.value = 0;
+
+      controller.selectedPage.value = pageName;
+      log(controller.dashboardScreentIndex.value.toString());
+
+      adminPageController.jumpToPage(index);
+    }
   }
 
   Widget _buildDashboardOption({
@@ -152,28 +179,34 @@ class ProviderLeftSidePanel extends StatelessWidget {
           ),
           child: Row(
             children: [
-              CircleAvatar(
-                radius: 16,
-                backgroundColor:
-                    adminController.dashboardScreentIndex.value == index
-                        ? AppColors.kcPrimaryWhite
-                        : AppColors.kcPrimaryColor,
-                child: Image.asset(
-                  image,
-                  color: adminController.dashboardScreentIndex.value != index
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  height: 32,
+                  width: 32,
+                  color: adminController.dashboardScreentIndex.value == index
                       ? AppColors.kcPrimaryWhite
                       : AppColors.kcPrimaryColor,
+                  child: Center(
+                    child: SvgPicture.asset(
+                      image,
+                      color:
+                          adminController.dashboardScreentIndex.value != index
+                              ? AppColors.kcPrimaryWhite
+                              : AppColors.kcPrimaryColor,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(width: 16),
               Text(
                 label,
                 style: TextStyle(
-                  color: adminController.dashboardScreentIndex.value == index
-                      ? AppColors.kcPrimaryWhite
-                      : AppColors.kcPrimaryTextColor,
-                  fontSize: 14,
-                ),
+                    color: adminController.dashboardScreentIndex.value == index
+                        ? AppColors.kcPrimaryWhite
+                        : AppColors.kcPrimaryTextColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600),
               )
             ],
           ),

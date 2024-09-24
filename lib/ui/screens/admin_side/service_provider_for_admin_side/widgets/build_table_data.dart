@@ -16,29 +16,35 @@ Widget buildLabels() {
           )),
       Expanded(
           flex: 2,
-          child: Text(
-            "Phone Number",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Phone Number",
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+              ),
             ),
           )),
       Expanded(
           flex: 1,
-          child: Text(
-            "Patients",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Patients",
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+              ),
             ),
           )),
       Expanded(
           flex: 1,
-          child: Text(
-            "Registered",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Registered",
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+              ),
             ),
           )),
       const SizedBox(width: 48),
@@ -80,15 +86,16 @@ Widget buildTabelData(
                   Text(
                     providerName,
                     style: const TextStyle(
+                      fontWeight: FontWeight.w600,
                       fontSize: 14,
                       color: AppColors.kcPrimaryTextColor,
                     ),
                   ),
                   Text(
                     providerEmail,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
-                      color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                      color: AppColors.kcPrimaryTextColor,
                     ),
                   )
                 ],
@@ -97,29 +104,35 @@ Widget buildTabelData(
           )),
       Expanded(
           flex: 2,
-          child: Text(
-            phoneNumber,
-            style: const TextStyle(
-              fontSize: 14,
-              color: AppColors.kcPrimaryTextColor,
+          child: Center(
+            child: Text(
+              phoneNumber,
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppColors.kcPrimaryTextColor,
+              ),
             ),
           )),
       Expanded(
           flex: 1,
-          child: Text(
-            totalPatients,
-            style: const TextStyle(
-              fontSize: 14,
-              color: AppColors.kcPrimaryTextColor,
+          child: Center(
+            child: Text(
+              totalPatients,
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppColors.kcPrimaryTextColor,
+              ),
             ),
           )),
       Expanded(
           flex: 1,
-          child: Text(
-            registeredDate,
-            style: const TextStyle(
-              fontSize: 14,
-              color: AppColors.kcPrimaryTextColor,
+          child: Center(
+            child: Text(
+              registeredDate,
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppColors.kcPrimaryTextColor,
+              ),
             ),
           )),
       CupertinoButton(

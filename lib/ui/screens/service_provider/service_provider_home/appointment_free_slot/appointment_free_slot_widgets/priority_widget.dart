@@ -13,115 +13,220 @@ class PriorityWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     final controller = Get.find<ZeitnahAdminController>();
-    return Obx(
-      () => AnimatedContainer(
-        // width: size.width,
-        duration: const Duration(milliseconds: 500),
-        alignment: controller.isPriorityFunction.value == true
-            ? Alignment.centerLeft
-            : Alignment.center,
-        child: Center(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const PriorityOnOffWidget(),
-              Visibility(
-                visible: controller.isPriorityFunction.value,
-                child: Column(
-                  children: [
-                    TweenAnimationBuilder(
-                      tween: Tween<double>(begin: 0, end: 1),
-                      duration: const Duration(milliseconds: 500),
-                      builder: (context, value, _) {
-                        return Container(
-                          // duration: const Duration(milliseconds: 1500),
-                          margin: const EdgeInsets.only(left: 24),
-                          decoration: BoxDecoration(
-                              color: AppColors.kcPrimaryWhite,
-                              border: Border.all(
-                                  color: AppColors.kcgreyFieldColor
-                                      .withOpacity(0.5)),
-                              borderRadius: BorderRadius.circular(8),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: AppColors.kcgreyFieldColor
-                                      .withOpacity(0.4),
-                                  offset: const Offset(0, 0),
-                                  blurRadius: 3,
-                                )
-                              ]),
-                          width: size.width * 0.185 * value,
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                          // height: 120.h,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 40,
-                                width: size.width,
-                                child: ListView.builder(
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: AppStrings.setPriorityTime.length,
-                                  itemBuilder: (context, index) =>
-                                      Obx(() => SizedBox(
-                                            width: size.width * 0.08,
-                                            height: 40,
-                                            child: Row(
-                                              // mainAxisAlignment:
-                                              //     MainAxisAlignment.center,
-                                              // mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                // 24.w.horizontalSpace,
-                                                Text(
-                                                  "${AppStrings.setPriorityTime[index]} min",
-                                                  style: TextStyle(
-                                                      color: AppColors
-                                                          .kcPrimaryBlackColor,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 12),
+    return Obx(() => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const PriorityOnOffWidget(),
+                // !controller.isPriorityFunction.value
+                //     ? const SizedBox(
+                //         height: 120,
+                //       )
+                //     :
+                Opacity(
+                  opacity: controller.isPriorityFunction.value ? 1 : 0,
+                  child: IgnorePointer(
+                    ignoring: !controller.isPriorityFunction.value,
+                    // Disables interactions when opacity is 0
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 24),
+                      decoration: BoxDecoration(
+                        color: AppColors.kcPrimaryWhite,
+                        border: Border.all(
+                          color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.kcgreyFieldColor.withOpacity(0.4),
+                            offset: const Offset(0, 0),
+                            blurRadius: 3,
+                          )
+                        ],
+                      ),
+                      width: size.width * 0.185,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            child: SizedBox(
+                              height: 40,
+                              width: size.width,
+                              child: ListView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                scrollDirection: Axis.horizontal,
+                                itemCount: AppStrings.setPriorityTime.length,
+                                itemBuilder: (context, index) =>
+                                    Obx(() => SizedBox(
+                                          width: size.width * 0.055,
+                                          height: 40,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                "${AppStrings.setPriorityTime[index]} min",
+                                                style: TextStyle(
+                                                  color: AppColors
+                                                      .kcPrimaryBlackColor,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 12,
                                                 ),
-                                                Radio(
-                                                    value: AppStrings
-                                                        .setPriorityTime[index],
-                                                    groupValue: controller
-                                                        .setPriorityTime.value,
-                                                    onChanged: (value) {
-                                                      controller.setPriorityTime
-                                                          .value = value!;
-                                                      controller.customPriority
-                                                          .value = false;
-                                                    }),
-                                                // 8.w.horizontalSpace,
-                                              ],
-                                            ),
-                                          )),
-                                ),
+                                              ),
+                                              Radio(
+                                                value: AppStrings
+                                                    .setPriorityTime[index],
+                                                groupValue: controller
+                                                    .setPriorityTime.value,
+                                                onChanged: (value) {
+                                                  controller.setPriorityTime
+                                                      .value = value!;
+                                                  controller.customPriority
+                                                      .value = false;
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        )),
                               ),
-                              const SizedBox(height: 16),
-                              customButtom(size, AppColors.kcPrimaryBlackColor,
-                                  size.width * 0.12, "Custom Time")
-                            ],
+                            ),
                           ),
-                        );
-                      },
+                          const SizedBox(height: 16),
+                          customButtom(
+                              size: size,
+                              color: AppColors.kcPrimaryBlackColor,
+                              buttonSize: size.width * 0.12,
+                              label: "Custom Time",
+                              height: size.width * 0.04),
+                        ],
+                      ),
                     ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
+            )
 
-              //
-              // AnimatedOpacity(opacity: opacity, duration: duration)
-            ],
-          ),
-        ),
-      ),
-    );
+        //     AnimatedContainer(
+        //   // width: size.width,
+        //   duration: const Duration(milliseconds: 500),
+        //   alignment: controller.isPriorityFunction.value == true
+        //       ? Alignment.centerLeft
+        //       : Alignment.centerLeft,
+        //   child: Center(
+        //     child: Row(
+        //       mainAxisSize: MainAxisSize.min,
+        //       children: [
+        //         const PriorityOnOffWidget(),
+        //         Visibility(
+        //           visible: controller.isPriorityFunction.value,
+        //           child: Column(
+        //             children: [
+        //               TweenAnimationBuilder(
+        //                 tween: Tween<double>(begin: 0, end: 1),
+        //                 duration: const Duration(milliseconds: 500),
+        //                 builder: (context, value, _) {
+        //                   return Container(
+        //                     // duration: const Duration(milliseconds: 1500),
+        //                     margin: const EdgeInsets.only(left: 24),
+        //                     decoration: BoxDecoration(
+        //                         color: AppColors.kcPrimaryWhite,
+        //                         border: Border.all(
+        //                             color: AppColors.kcgreyFieldColor
+        //                                 .withOpacity(0.5)),
+        //                         borderRadius: BorderRadius.circular(8),
+        //                         boxShadow: [
+        //                           BoxShadow(
+        //                             color: AppColors.kcgreyFieldColor
+        //                                 .withOpacity(0.4),
+        //                             offset: const Offset(0, 0),
+        //                             blurRadius: 3,
+        //                           )
+        //                         ]),
+        //                     width: size.width * 0.185 * value,
+        //                     padding: const EdgeInsets.symmetric(
+        //                         horizontal: 16, vertical: 8),
+        //                     // height: 120.h,
+        //                     child: Column(
+        //                       mainAxisSize: MainAxisSize.min,
+        //                       crossAxisAlignment: CrossAxisAlignment.center,
+        //                       mainAxisAlignment: MainAxisAlignment.center,
+        //                       children: [
+        //                         Flexible(
+        //                           child: SizedBox(
+        //                             height: 40,
+        //                             width: size.width,
+        //                             child: ListView.builder(
+        //                               shrinkWrap: true,
+        //                               physics:
+        //                                   const NeverScrollableScrollPhysics(),
+        //                               scrollDirection: Axis.horizontal,
+        //                               itemCount:
+        //                                   AppStrings.setPriorityTime.length,
+        //                               itemBuilder: (context, index) => Obx(() =>
+        //                                   SizedBox(
+        //                                     width: size.width * 0.055,
+        //                                     height: 40,
+        //                                     child: Row(
+        //                                       mainAxisAlignment:
+        //                                           MainAxisAlignment.center,
+        //                                       mainAxisSize: MainAxisSize.max,
+        //                                       crossAxisAlignment:
+        //                                           CrossAxisAlignment.center,
+        //                                       children: [
+        //                                         // 24.w.horizontalSpace,
+        //                                         Text(
+        //                                           "${AppStrings.setPriorityTime[index]} min",
+        //                                           style: TextStyle(
+        //                                               color: AppColors
+        //                                                   .kcPrimaryBlackColor,
+        //                                               fontWeight: FontWeight.bold,
+        //                                               fontSize: 12),
+        //                                         ),
+        //                                         Radio(
+        //                                             value: AppStrings
+        //                                                 .setPriorityTime[index],
+        //                                             groupValue: controller
+        //                                                 .setPriorityTime.value,
+        //                                             onChanged: (value) {
+        //                                               controller.setPriorityTime
+        //                                                   .value = value!;
+        //                                               controller.customPriority
+        //                                                   .value = false;
+        //                                             }),
+        //                                         // 8.w.horizontalSpace,
+        //                                       ],
+        //                                     ),
+        //                                   )),
+        //                             ),
+        //                           ),
+        //                         ),
+        //                         const SizedBox(height: 16),
+        //                         customButtom(size, AppColors.kcPrimaryBlackColor,
+        //                             size.width * 0.12, "Custom Time")
+        //                       ],
+        //                     ),
+        //                   );
+        //                 },
+        //               ),
+        //             ],
+        //           ),
+        //         ),
+        //
+        //         //
+        //         // AnimatedOpacity(opacity: opacity, duration: duration)
+        //       ],
+        //     ),
+        //   ),
+        // ),
+
+        );
   }
 }
 
@@ -184,23 +289,28 @@ class PriorityOnOffWidget extends StatelessWidget {
   }
 }
 
-Widget customButtom(Size size, Color color, double buttonSize, String label) {
+Widget customButtom(
+    {required Size size,
+    required Color color,
+    required double buttonSize,
+    required String label,
+    double? height}) {
   return Center(
     child: Container(
       // height: size.height * 0.045,
       width: buttonSize,
-      height: 48,
+      height: height ?? 48,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: color,
       ),
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: EdgeInsets.symmetric(vertical: height != null ? 8 : 0),
       child: Center(
           child: Text(
         label,
-        style: const TextStyle(
+        style: TextStyle(
             color: AppColors.kcPrimaryWhite,
-            fontSize: 12,
+            fontSize: size.height * 0.015,
             fontWeight: FontWeight.w600),
       )),
     ),

@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:zeitnah_admin/ui/constants/app_colors/app_colors.dart';
 
 import 'appointment_free_slot_widgets/priority_widget.dart';
@@ -38,13 +39,13 @@ class AppointmentFreeSlot extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 8),
-                  const Text(
-                    "Appointment Free Slot",
-                    style: TextStyle(
-                        color: AppColors.kcPrimaryTextColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
+                  Text("Appointment Free Slot",
+                      style: GoogleFonts.inter(
+                        textStyle: TextStyle(
+                            color: AppColors.kcPrimaryTextColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      )),
                   const SizedBox(height: 24),
                   const AppointmentOptionWidget(
                     image: 'assets/icons/date.svg',
@@ -71,8 +72,11 @@ class AppointmentFreeSlot extends StatelessWidget {
                       log(size.height.toString());
                       log(size.width.toString());
                     },
-                    child: customButtom(size, AppColors.kcPrimaryColor,
-                        size.width * 0.12, "Update"),
+                    child: customButtom(
+                        size: size,
+                        color: AppColors.kcPrimaryColor,
+                        buttonSize: size.width * 0.12,
+                        label: "Update"),
                   )
 
                   // ~
@@ -111,17 +115,17 @@ class AppointmentOptionWidget extends StatelessWidget {
       // padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Center(
         child: ListTile(
-          leading: SvgPicture.asset(
-            image,
-            height: 32,
-            color: Colors.blueAccent,
-          ), // Image.asset(
+          leading: SvgPicture.asset(image,
+              height: 28, color: AppColors.kcPrimaryColor), // Image.asset(
           //   image,
           //   color: Colors.blueAccent,
           // ),
           title: Text(
             label,
-            style: const TextStyle(color: AppColors.kcPrimaryTextColor, fontSize: 14),
+            style: const TextStyle(
+                color: AppColors.kcPrimaryTextColor,
+                fontSize: 14,
+                fontWeight: FontWeight.w600),
           ),
         ),
       ),

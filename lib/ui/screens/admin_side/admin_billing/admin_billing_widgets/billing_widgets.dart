@@ -74,15 +74,16 @@ Widget buildBillingTabelData(
               Text(
                 patientName,
                 style: const TextStyle(
+                  fontWeight: FontWeight.w600,
                   fontSize: 14,
                   color: AppColors.kcPrimaryTextColor,
                 ),
               ),
               Text(
                 providerEmail,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
-                  color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                  color: AppColors.kcPrimaryTextColor,
                 ),
               )
             ],

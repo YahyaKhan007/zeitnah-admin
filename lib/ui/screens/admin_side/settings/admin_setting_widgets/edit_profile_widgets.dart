@@ -12,13 +12,16 @@ class EditProfileWidget extends StatelessWidget {
     final zeitnahControler = Get.find<ZeitnahAdminController>();
 
     return ListTile(
-      title: const Text(
+      title: Text(
         "Admin Panel",
-        style: TextStyle(fontSize: 14, color: AppColors.kcPrimaryTextColor),
+        style: TextStyle(
+            fontSize: 14,
+            color: AppColors.kcPrimaryBlackColor,
+            fontWeight: FontWeight.bold),
       ),
       subtitle: const Text(
         "alexarawles@gmail.com",
-        style: TextStyle(fontSize: 14, color: AppColors.kcSecondaryTextColor),
+        style: TextStyle(fontSize: 14, color: AppColors.kcPrimaryTextColor),
       ),
       trailing: GestureDetector(
         onTap: () {
@@ -38,7 +41,8 @@ class EditProfileWidget extends StatelessWidget {
             child: Center(
               child: Text(
                 zeitnahControler.editProfile.value ? "Update" : "Edit",
-                style: const TextStyle(fontSize: 14, color: AppColors.kcPrimaryWhite),
+                style: const TextStyle(
+                    fontSize: 14, color: AppColors.kcPrimaryWhite),
               ),
             ),
           ),

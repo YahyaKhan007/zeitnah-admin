@@ -19,7 +19,7 @@ class _AdminHomeState extends State<AdminHome> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.kcPrimaryColor.withOpacity(0.05),
+      backgroundColor: AppColors.kcPrimaryBAckGroundColor,
       bottomNavigationBar: SizedBox(
         height: 20,
         child: Center(
@@ -62,12 +62,12 @@ class _AdminHomeState extends State<AdminHome> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 16),
-            topBar(size: size, context: context),
-            Row(
+      body: Column(
+        children: [
+          const SizedBox(height: 16),
+          topBar(size: size, context: context),
+          Expanded(
+            child: Row(
               children: [
                 AdminLeftSidePanel(
                   adminPageController: adminPageController,
@@ -78,8 +78,8 @@ class _AdminHomeState extends State<AdminHome> {
                 )
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

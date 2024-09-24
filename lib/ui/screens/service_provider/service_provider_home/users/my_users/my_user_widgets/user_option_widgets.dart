@@ -109,7 +109,8 @@ class UserPageOptionWidget extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
+                      fontFamily: 'helvetica',
                       color: controller.providerUserTab.value == index
                           ? AppColors.kcPrimaryWhite
                           : AppColors.kcPrimaryTextColor,
@@ -118,14 +119,20 @@ class UserPageOptionWidget extends StatelessWidget {
               ),
               trailing: Visibility(
                 visible: show,
-                child: const CircleAvatar(
+                child: CircleAvatar(
                   // radius: size.height * 0.015,
                   radius: 18,
-                  backgroundColor: AppColors.kcPrimaryColor,
+                  backgroundColor: controller.providerUserTab.value == index
+                      ? AppColors.kcPrimaryWhite
+                      : AppColors.kcPrimaryColor,
                   child: Text(
                     "+2",
                     style: TextStyle(
-                        color: AppColors.kcPrimaryWhite, fontSize: 12),
+                        fontFamily: 'helvetica',
+                        color: controller.providerUserTab.value == index
+                            ? AppColors.kcPrimaryTextColor
+                            : AppColors.kcPrimaryWhite,
+                        fontSize: 12),
                   ),
                 ),
               ),

@@ -44,6 +44,13 @@ class AdminDashboard extends StatelessWidget {
       child: Container(
         height: size.height * 0.5,
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.kcgreyFieldColor.withOpacity(0.3),
+              offset: const Offset(0, 3),
+              blurRadius: 3,
+            )
+          ],
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
         ),
@@ -214,20 +221,20 @@ class AdminDashboard extends StatelessWidget {
                           if (value % 100 == 0) {
                             return Text(
                               value.toInt().toString(),
-                              style:
-                                  const TextStyle(color: Colors.black, fontSize: 12),
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 12),
                             );
                           }
                           return Container();
                         },
                       ),
                     ),
-                    bottomTitles:
-                        const AxisTitles(sideTitles: SideTitles(showTitles: true)),
-                    topTitles:
-                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                    rightTitles:
-                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    bottomTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: true)),
+                    topTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false)),
+                    rightTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false)),
                   ),
                   gridData: const FlGridData(show: true),
                   borderData: FlBorderData(

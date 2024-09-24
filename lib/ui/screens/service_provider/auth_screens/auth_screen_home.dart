@@ -20,37 +20,46 @@ class _AuthScreenHomeState extends State<AuthScreenHome> {
     Size size = MediaQuery.of(context).size;
     final adminController = Get.find<ZeitnahAdminController>();
     return Scaffold(
-        body: Stack(
-      children: [
-        Container(
-          alignment: adminController.authScreen.value == AuthScreenEnum.login
-              ? Alignment.centerLeft
-              : Alignment.center,
-          height: size.height,
-          width: size.width,
-          decoration: const BoxDecoration(
-              color: AppColors.kcPrimaryColor,
-              image: DecorationImage(
-                  image: AssetImage('assets/images/background.png'),
-                  fit: BoxFit.cover)),
-        ),
-        Obx(
-          () => AnimatedContainer(
-              duration: const Duration(seconds: 1),
-              height: size.height,
-              // width: size.width * 0.33,
-              // alignment:adminController.authScreen.value == AuthScreenEnum.login
-              //         ?Alignment.centerLeft : Alignment.center,
-              decoration: const BoxDecoration(color: AppColors.kcPrimaryColor),
-              child: SizedBox(
-                  height: size.height,
-                  width: size.width * 0.33,
-                  child:
-                      adminController.authScreen.value == AuthScreenEnum.login
-                          ? LoginScreen()
-                          : Center(child: RegisterationScreen()))),
-        ),
-      ],
-    ));
+      body: Row(
+        children: [
+          Obx(
+            () => AnimatedContainer(
+                duration: const Duration(seconds: 1),
+                height: size.height,
+                // width: size.width * 0.33,
+                // alignment:adminController.authScreen.value == AuthScreenEnum.login
+                //         ?Alignment.centerLeft : Alignment.center,
+                decoration:
+                    const BoxDecoration(color: AppColors.kcPrimaryColor),
+                child: SizedBox(
+                    height: size.height,
+                    width: size.width * 0.33,
+                    child:
+                        adminController.authScreen.value == AuthScreenEnum.login
+                            ? LoginScreen()
+                            : Center(child: RegisterationScreen()))),
+          ),
+          Expanded(
+              child: Container(
+            height: size.height,
+            width: size.width,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/background.png'),
+                    fit: BoxFit.cover)),
+          ))
+          // Container(
+          //   // alignment: adminController.authScreen.value == AuthScreenEnum.login
+          //   //     ? Alignment.centerLeft
+          //   //     : Alignment.center,
+          //   height: size.height,
+          //   width: size.width,
+          //   decoration: const BoxDecoration(
+          //     color: AppColors.kcPrimaryColor,
+          //   ),
+          // ),
+        ],
+      ),
+    );
   }
 }

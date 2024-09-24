@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../app_views.dart';
 import '../../admin_billing/billing_for_admin.dart';
 import '../../settings/show_admin_profile.dart';
-import '../../total_appointments_for_admin/total_appointments_for_admin.dart';
 import '../admin_dashboard/admin_dashboard.dart';
 
 class AdminRightSidePanel extends StatelessWidget {
@@ -26,8 +25,8 @@ class AdminRightSidePanel extends StatelessWidget {
             controller: adminPageController,
             children: [
               const AdminDashboard(),
-              const TotalAppointmentsForAdmin(),
-              const ServiceProvidersForAdminSide(),
+              // const TotalAppointmentsForAdmin(),
+              ServiceProvidersForAdminSide(),
               const BillingAndPaymentsForAdmin(),
               ShowAdminProfile(),
             ],

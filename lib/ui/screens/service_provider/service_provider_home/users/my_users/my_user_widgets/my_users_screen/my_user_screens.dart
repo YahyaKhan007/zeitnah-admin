@@ -9,9 +9,11 @@ class MyUsers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        height: size.height * 0.5,
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
             color: AppColors.kcPrimaryWhite,
@@ -27,7 +29,7 @@ class MyUsers extends StatelessWidget {
             Expanded(
               child: ListView.separated(
                 itemCount: AppStrings.providerPhotos.length,
-                physics: const BouncingScrollPhysics(),
+                // physics: const BouncingScrollPhysics(),
                 separatorBuilder: (context, index) {
                   return Divider(
                     color: AppColors.kcgreyFieldColor.withOpacity(0.5),

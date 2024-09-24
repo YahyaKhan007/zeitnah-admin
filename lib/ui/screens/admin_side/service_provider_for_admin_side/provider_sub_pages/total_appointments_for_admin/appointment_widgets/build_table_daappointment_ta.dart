@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../constants/app_colors/app_colors.dart';
+import '../../../../../../constants/app_colors/app_colors.dart';
 
 Widget buildAppointmentLabels() {
   return Row(
@@ -85,15 +85,15 @@ Widget buildAppointmentTabelData(
               Text(
                 patientName,
                 style: const TextStyle(
-                  fontSize: 14,
-                  color: AppColors.kcPrimaryTextColor,
-                ),
+                    fontSize: 14,
+                    color: AppColors.kcPrimaryTextColor,
+                    fontWeight: FontWeight.w600),
               ),
               Text(
                 providerEmail,
                 style: TextStyle(
                   fontSize: 14,
-                  color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                  color: AppColors.kcPrimaryTextColor,
                 ),
               )
             ],

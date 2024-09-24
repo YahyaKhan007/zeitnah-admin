@@ -17,29 +17,35 @@ Widget buildLabelsForMyUsers() {
           )),
       Expanded(
           flex: 2,
-          child: Text(
-            "Phone Number",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Phone Number",
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+              ),
             ),
           )),
       Expanded(
           flex: 1,
-          child: Text(
-            "Status",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Status",
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+              ),
             ),
           )),
       Expanded(
           flex: 1,
-          child: Text(
-            "Registered",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+          child: Center(
+            child: Text(
+              "Registered",
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+              ),
             ),
           )),
       const SizedBox(width: 48),
@@ -57,8 +63,8 @@ Widget buildTabelDataForMyUsers({
   required int index,
 }) {
   return Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    mainAxisAlignment: MainAxisAlignment.start,
+    // crossAxisAlignment: CrossAxisAlignment.start,
+    // mainAxisAlignment: MainAxisAlignment.start,
     children: [
       Expanded(
           flex: 5,
@@ -72,15 +78,16 @@ Widget buildTabelDataForMyUsers({
                   Text(
                     providerName,
                     style: const TextStyle(
+                      fontWeight: FontWeight.w600,
                       fontSize: 14,
                       color: AppColors.kcPrimaryTextColor,
                     ),
                   ),
                   Text(
                     providerEmail,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
-                      color: AppColors.kcgreyFieldColor.withOpacity(0.5),
+                      color: AppColors.kcPrimaryTextColor,
                     ),
                   )
                 ],
@@ -89,30 +96,33 @@ Widget buildTabelDataForMyUsers({
           )),
       Expanded(
           flex: 2,
-          child: Text(
-            phoneNumber,
-            style: const TextStyle(
-              fontSize: 14,
-              color: AppColors.kcPrimaryTextColor,
+          child: Center(
+            child: Text(
+              phoneNumber,
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppColors.kcPrimaryTextColor,
+              ),
             ),
           )),
       Expanded(
         flex: 1,
-        child: Container(
-          alignment: Alignment.centerLeft,
+        child: Center(
           child: SvgPicture.asset("assets/icons/diomond.svg",
               color: [1, 3, 5].contains(index) == true
                   ? const Color(0xffC4B420)
-                  : AppColors.kcPrimaryBlackColor),
+                  : AppColors.kcPrimaryTextColor),
         ),
       ),
       Expanded(
           flex: 1,
-          child: Text(
-            registeredDate,
-            style: const TextStyle(
-              fontSize: 14,
-              color: AppColors.kcPrimaryTextColor,
+          child: Center(
+            child: Text(
+              registeredDate,
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppColors.kcPrimaryTextColor,
+              ),
             ),
           )),
       CupertinoButton(

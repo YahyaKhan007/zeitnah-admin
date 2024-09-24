@@ -13,6 +13,8 @@ class StatisticsForProvider extends StatelessWidget {
       // height: size.height,
       width: size.width,
       child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           StatisticRowWidgets(),
           SizedBox(height: 32),

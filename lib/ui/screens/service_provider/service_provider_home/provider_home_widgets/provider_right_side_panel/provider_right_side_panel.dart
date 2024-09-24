@@ -21,6 +21,7 @@ class ProviderRightSidePanel extends StatelessWidget {
           height: size.height,
           width: size.width * 0.75,
           child: PageView(
+            physics: const NeverScrollableScrollPhysics(),
             allowImplicitScrolling: false,
             controller: adminPageController,
             children: [

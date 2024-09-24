@@ -12,15 +12,18 @@ class StatisticGraphWidget extends StatelessWidget {
 
     // TODO: implement build
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
           // margin: EdgeInsets.only(right: 48.w),
-          width: size.width * 0.72,
+          width: size.width * 0.74,
           height: size.height * 0.4,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: AppColors.kcPrimaryWhite,
           ),
+
           child: Container(
             height: size.height * 0.15,
             padding: const EdgeInsets.all(16),
@@ -175,27 +178,30 @@ class StatisticRowWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        StatisticContainerWidget(
-          count: 385,
-          image: 'assets/icons/provider.png',
-          label: 'Connected Patients',
-        ),
-        SizedBox(width: 48),
-        StatisticContainerWidget(
-          count: 385,
-          image: 'assets/icons/appointment.png',
-          label: 'Assigned Appointments This Month',
-        ),
-        SizedBox(width: 48),
-        StatisticContainerWidget(
-          count: 385,
-          image: 'assets/icons/appointment.png',
-          label: 'Total Assigned Appointments',
-        ),
-        SizedBox(width: 48),
-      ],
+    Size size = MediaQuery.of(context).size;
+    return SizedBox(
+      width: size.width * 0.74,
+      child: Row(
+        children: [
+          const StatisticContainerWidget(
+            count: 385,
+            image: 'assets/icons/provider.png',
+            label: 'Connected Patients',
+          ),
+          SizedBox(width: size.width * 0.05),
+          const StatisticContainerWidget(
+            count: 385,
+            image: 'assets/icons/appointment.png',
+            label: 'Assigned Appointments This Month',
+          ),
+          SizedBox(width: size.width * 0.05),
+          const StatisticContainerWidget(
+            count: 385,
+            image: 'assets/icons/appointment.png',
+            label: 'Total Assigned Appointments',
+          ),
+        ],
+      ),
     );
   }
 }

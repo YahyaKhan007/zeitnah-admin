@@ -22,44 +22,64 @@ class ProviderTextfieldWithLabelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final zeitnahControler = Get.find<ZeitnahAdminController>();
     Size size = MediaQuery.of(context).size;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12, color: AppColors.kcPrimaryTextColor),
-        ),
-        const SizedBox(height: 8),
-        Obx(
-          () => Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            height: 40,
-            width: size.width * 0.25,
-            decoration: BoxDecoration(
-              color: AppColors.kcgreyFieldColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: TextFormField(
-              enabled: zeitnahControler.editProfile.value,
-              style: const TextStyle(
-                color: AppColors.kcgreyFieldColor,
-                fontSize: 12,
+    return SizedBox(
+      height: size.height * 0.09,
+      width: size.width * 0.28,
+      child: FittedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                label,
+                style: const TextStyle(
+                    fontSize: 12, color: AppColors.kcPrimaryTextColor),
               ),
-              controller: controller,
-              obscureText: isPassword != null ? true : false,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: isPassword == null ? hintText : '********',
-                hintStyle: TextStyle(
-                  color: AppColors.kcgreyFieldColor.withOpacity(0.5),
-                  fontSize: 12,
+            ),
+            const SizedBox(height: 8),
+            Obx(
+              () => Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                // height: 40,
+                width: size.width * 0.28,
+                decoration: BoxDecoration(
+                  color: zeitnahControler.editProfile.value
+                      ? AppColors.kcgreyFieldColor.withOpacity(0.1)
+                      : null,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SizedBox(
+                  child: TextFormField(
+                    enabled: zeitnahControler.editProfile.value,
+                    style: TextStyle(
+                        color: AppColors.kcgreyFieldColor,
+                        fontSize: 14,
+                        fontWeight: zeitnahControler.editProfile.value
+                            ? FontWeight.normal
+                            : FontWeight.bold),
+                    controller: controller,
+                    obscureText: isPassword != null ? true : false,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: isPassword == null ? hintText : '********',
+                      hintStyle: TextStyle(
+                          color: zeitnahControler.editProfile.value
+                              ? AppColors.kcgreyFieldColor.withOpacity(0.5)
+                              : AppColors.kcPrimaryTextColor,
+                          fontSize: 14,
+                          fontWeight: zeitnahControler.editProfile.value
+                              ? FontWeight.normal
+                              : FontWeight.bold),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        )
-      ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }

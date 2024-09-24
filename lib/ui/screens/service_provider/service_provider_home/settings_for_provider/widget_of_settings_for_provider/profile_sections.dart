@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:zeitnah_admin/ui/screens/service_provider/service_provider_home/appointment_free_slot/appointment_free_slot_widgets/priority_widget.dart';
 
 import '../../../../../../services/get_controllers_service/zeitnah_admin_controller.dart';
 import '../../../../../constants/app_colors/app_colors.dart';
@@ -22,30 +23,31 @@ class ProfileSectionWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.45,
+      height: size.height * 0.5,
       width: size.width * 0.65,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: AppColors.kcPrimaryWhite),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Profile",
-                style: TextStyle(
-                    color: AppColors.kcPrimaryTextColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              profileRowWidget(size: size),
-              const SizedBox(height: 24),
-              Wrap(
-                spacing: 32,
-                runSpacing: 16,
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Profile",
+              style: TextStyle(
+                  color: AppColors.kcPrimaryTextColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            profileRowWidget(size: size),
+            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Wrap(
+                spacing: size.width * 0.03,
+                runSpacing: size.height * 0.02,
                 alignment: WrapAlignment.start,
                 crossAxisAlignment: WrapCrossAlignment.start,
                 direction: Axis.horizontal,
@@ -90,76 +92,84 @@ class ProfileSectionWidget extends StatelessWidget {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
 
   Widget profileRowWidget({required Size size}) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CircleAvatar(
-              radius: size.height * 0.04,
-              backgroundImage:
-                  const AssetImage('assets/images/profile_pic.png'),
-            ),
-            const SizedBox(width: 16),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  "Bilal Hospital",
-                  style: TextStyle(
-                      fontSize: 14, color: AppColors.kcPrimaryTextColor),
-                ),
-                Text(
-                  "alexarawles@gmail.com",
-                  style: TextStyle(
-                      fontSize: 14, color: AppColors.kcgreyFieldColor),
-                )
-              ],
-            )
-          ],
-        ),
-        GetBuilder<ZeitnahAdminController>(
-            // init: ,
-            init: ZeitnahAdminController(),
-            builder: (zeitnaControler) {
-              return GestureDetector(
-                onTap: () {
-                  log("message");
-                  zeitnaControler.editProfile.value =
-                      !zeitnaControler.editProfile.value;
-                },
-                child: Obx(
-                  () => Container(
-                    height: size.height * 0.05,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: zeitnaControler.editProfile.value
-                          ? AppColors.kcPrimaryGreen
-                          : AppColors.kcPrimaryColor,
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 32),
-                    child: Center(
-                      child: Text(
-                        zeitnaControler.editProfile.value ? "Update" : "Edit",
-                        style: const TextStyle(
-                            fontSize: 14, color: AppColors.kcPrimaryWhite),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                radius: size.height * 0.04,
+                backgroundImage:
+                    const AssetImage('assets/images/profile_pic.png'),
+              ),
+              const SizedBox(width: 16),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    "Bilal Hospital",
+                    style: TextStyle(
+                        fontFamily: 'helvetica',
+                        fontSize: 14,
+                        color: AppColors.kcPrimaryTextColor),
+                  ),
+                  Text(
+                    "alexarawles@gmail.com",
+                    style: TextStyle(
+                        fontFamily: 'helvetica',
+                        fontSize: 10,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.kcgreyFieldColor.withOpacity(0.6)),
+                  )
+                ],
+              )
+            ],
+          ),
+          GetBuilder<ZeitnahAdminController>(
+              // init: ,
+              init: ZeitnahAdminController(),
+              builder: (zeitnaControler) {
+                return GestureDetector(
+                  onTap: () {
+                    log("message");
+                    zeitnaControler.editProfile.value =
+                        !zeitnaControler.editProfile.value;
+                  },
+                  child: Obx(
+                    () => Container(
+                      height: size.height * 0.05,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: zeitnaControler.editProfile.value
+                            ? AppColors.kcPrimaryGreen
+                            : AppColors.kcPrimaryColor,
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 32),
+                      child: Center(
+                        child: Text(
+                          zeitnaControler.editProfile.value ? "Update" : "Edit",
+                          style: const TextStyle(
+                              fontSize: 14, color: AppColors.kcPrimaryWhite),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            })
-      ],
+                );
+              })
+        ],
+      ),
     );
   }
 }
@@ -172,9 +182,9 @@ class MyQrCodeSectionWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.3,
+      height: size.height * 0.26,
       width: size.width * 0.25,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: AppColors.kcPrimaryWhite),
@@ -184,18 +194,29 @@ class MyQrCodeSectionWidget extends StatelessWidget {
           const Text(
             "My Qr Code",
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 18,
               color: AppColors.kcPrimaryTextColor,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 16),
+          // SizedBox(height: size.height * 0.02),
           Center(
-            child: SvgPicture.asset(
-              'assets/images/my_qr_code.svg',
-              height: size.height * 0.2,
+            child: SizedBox(
+              width: size.width * 0.08,
+              child: SvgPicture.asset(
+                'assets/images/my_qr_code.svg',
+                fit: BoxFit.fill,
+                height: size.height * 0.13,
+              ),
             ),
-          )
+          ),
+          SizedBox(height: size.height * 0.02),
+          customButtom(
+              size: size,
+              color: AppColors.kcPrimaryColor,
+              buttonSize: size.width * 0.06,
+              label: "Save",
+              height: size.height * 0.04)
         ],
       ),
     );

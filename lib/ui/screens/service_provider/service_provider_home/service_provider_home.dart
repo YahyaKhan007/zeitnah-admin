@@ -61,12 +61,12 @@ class _ServiceProviderHomeState extends State<ServiceProviderHome> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // 16.h.verticalSpace,
-            const ProviderHomeTopbarWidget(),
-            Row(
+      body: Column(
+        children: [
+          // 16.h.verticalSpace,
+          const ProviderHomeTopbarWidget(),
+          Expanded(
+            child: Row(
               children: [
                 ProviderLeftSidePanel(
                   adminPageController: adminPageController,
@@ -77,8 +77,8 @@ class _ServiceProviderHomeState extends State<ServiceProviderHome> {
                 )
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

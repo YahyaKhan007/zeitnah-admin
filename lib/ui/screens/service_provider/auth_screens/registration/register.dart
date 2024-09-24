@@ -28,7 +28,7 @@ class RegisterationScreen extends StatelessWidget {
       width: size.width * 0.33,
       decoration: BoxDecoration(
         color: AppColors.kcPrimaryWhite,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(0),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -38,6 +38,9 @@ class RegisterationScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             // mainAxisSize: MainAxisSize.min,
             children: [
+              SizedBox(
+                height: size.height * 0.05,
+              ),
               Center(child: Image.asset("assets/icons/app_icon.png")),
               Text(
                 'Register now',
