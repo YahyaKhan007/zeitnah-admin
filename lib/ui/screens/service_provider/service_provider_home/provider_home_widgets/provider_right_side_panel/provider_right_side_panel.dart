@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zeitnah_admin/ui/screens/service_provider/service_provider_home/appointment_pages/appointment_free_slot.dart';
 
-import '../../appointment_free_slot/appointment_free_slot.dart';
 import '../../settings_for_provider/profile_for_service_provider.dart';
 import '../../statistics_for_provider/statistics_for_provider.dart';
 import '../../users/my_users_home.dart';

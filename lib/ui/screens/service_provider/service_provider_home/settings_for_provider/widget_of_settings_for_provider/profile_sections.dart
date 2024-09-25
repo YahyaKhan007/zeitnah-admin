@@ -3,10 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:zeitnah_admin/ui/screens/service_provider/service_provider_home/appointment_free_slot/appointment_free_slot_widgets/priority_widget.dart';
 
 import '../../../../../../services/get_controllers_service/zeitnah_admin_controller.dart';
 import '../../../../../constants/app_colors/app_colors.dart';
+import '../../appointment_pages/appointment_free_slot_widgets/priority_widget.dart';
 import 'provider_textfield_with_label.dart';
 
 class ProfileSectionWidget extends StatelessWidget {

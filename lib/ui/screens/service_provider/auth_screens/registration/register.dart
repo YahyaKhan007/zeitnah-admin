@@ -70,21 +70,21 @@ class RegisterationScreen extends StatelessWidget {
                   hintText: 'password',
                   controller: confirmPassword,
                   trailigIcon: Icons.remove_red_eye),
-              labeltextFieldColumn(
-                  label: 'Street',
-                  hintText: 'Street',
-                  controller: streetContoller),
-              labeltextFieldColumn(
-                  label: 'City', hintText: 'City', controller: cityController),
-              labeltextFieldColumn(
-                  label: 'Zip Code',
-                  hintText: 'Zipcode',
-                  controller: zipCodeController),
+              // labeltextFieldColumn(
+              //     label: 'Street',
+              //     hintText: 'Street',
+              //     controller: streetContoller),
+              // labeltextFieldColumn(
+              //     label: 'City', hintText: 'City', controller: cityController),
+              // labeltextFieldColumn(
+              //     label: 'Zip Code',
+              //     hintText: 'Zipcode',
+              //     controller: zipCodeController),
               const SizedBox(height: 16),
               rememberMeRow(),
-              const SizedBox(height: 24),
+              const SizedBox(height: 16),
               sigupButton(),
-              const SizedBox(height: 24),
+              const SizedBox(height: 16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: Divider(

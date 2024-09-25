@@ -11,6 +11,7 @@ class ZeitnahAdminController extends GetxController {
 
   RxBool isPriorityFunction = RxBool(false);
   RxInt adminProviderSubScreenIndex = RxInt(0);
+  RxInt appointmentSubScreenIndex = RxInt(0);
   RxInt setPriorityTime = RxInt(3);
   RxBool customPriority = RxBool(false);
 

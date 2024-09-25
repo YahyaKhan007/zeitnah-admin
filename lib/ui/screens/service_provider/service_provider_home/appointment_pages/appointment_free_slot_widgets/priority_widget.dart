@@ -104,7 +104,7 @@ class PriorityWidget extends StatelessWidget {
                               color: AppColors.kcPrimaryBlackColor,
                               buttonSize: size.width * 0.12,
                               label: "Custom Time",
-                              height: size.width * 0.04),
+                              height: size.width * 0.025),
                         ],
                       ),
                     ),
